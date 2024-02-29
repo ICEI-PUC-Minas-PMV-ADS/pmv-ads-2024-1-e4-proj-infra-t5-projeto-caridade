@@ -1,23 +1,23 @@
-# TÍTULO DO PROJETO
+# CHARITY FINDER
 
-`CURSO`
+`Análise e desenvolvimento de sistemas`
 
-`DISCIPLINA`
+`Projeto`
 
-`SEMESTRE`
+`Eixo 4`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Amanda de Almeida Silva
+* Felipe Augusto Duque Ferreira
+* Lucas Russo Correa Dias
+* Vinícius Carneiro Gonçalves
 
 ## Orientador
 
-* Nome completo do professor 1
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
