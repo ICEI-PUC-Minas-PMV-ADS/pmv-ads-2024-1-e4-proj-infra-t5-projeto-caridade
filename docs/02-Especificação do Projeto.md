@@ -30,8 +30,12 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Carlos Silva        | Encontrar projetos sociais         | Obter informações a respeito do escopo de atuação das instituições     |
+|Carlos Silva        | Ter um catálogo atualizado dos projetos que me interessam               | Para fazer doações periódicas |
+|Marcia Ferreira     | Ter uma lista de instituições de caridade de seu interesse em um só lugar         | Obter informações a respeito da atuação dessas instituições |
+|Matheus Alves       | Favoritar projetos sociais focados em meio ambiente              | Encontrar com facilidade as páginas das organizações |
+|Matheus Alves       | Poder deixar comentários a respeito das organizações e seus projetos    | Ter notas/resumos a respeito da organização que está ajudando     |
+|Ana Luiza           | Saber quanto doou para cada instituição           | Ter um panorama de quais instituições ajudou com mais ou menos frequência |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
