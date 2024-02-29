@@ -8,19 +8,21 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+As **_personas_** que ilustram nosso público-alvo são mostradas nas tabelas a seguir:
+| `USUÁRIO` |`MOTIVAÇÕES`| `FRUSTRAÇÕES` | `HOBBIES / APLICATIVOS` |
+|----------------------|--------------------|--------------------|------------------------|
+|<img width="140" alt="car" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/833f7d4b-e5c7-4c40-baaf-fb24851e64c3">
+**Carlos Silva,** **35 anos.** Advogado. | Atua Pro Bono para pessoas carentes. |Dificuldade em encontrar novas organizações que atuem em áreas de seu interesse | Ler livros, viajar / Linkedin, Instagram, Facebook, WhatsApp |
+|||||
+|<img width="140" alt="mar" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/7251c8d4-18ee-4a03-be53-2a6d7cfcf627">
+**Marcia Ferreira,** **62 anos.** Aposentada. Trabalhava como professora de ensino religioso| Engajar em projetos focados na educação de jovens e adultos.| Dificuldade em lidar com a grande quantidade de informações ao fazer pesquisas no Google a respeito de projetos sociais.| Ler, costura, crochê / WhatsApp, Eduk |
+|||||
+|<img width="151" alt="mat" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/4f518403-7924-48e1-9396-87a69686c67b">
+**Matheus Alves ,** **19 anos.** estudante de análise e desenvolvimento de sistemas. | Tem interesse em causas relacionadas à preservação do meio ambiente e defesa de animais|  Não encontrou aplicações que o mantivesse engajado na procura de projetos sociais;	Péssima experiencia de usuário em outras aplicações com propostas similares. |Sair com amigos, jogar online, passar tempo com sua família / Instagram, Steam, TikTok|
+|||||
+|<img width="194" alt="ana" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/c17234fd-0213-4de4-b600-ab4951ff430e">
+**Ana Luiza,** **27 anos.** Psicóloga clínica.| Especializar-se no atendimento de mulheres vítimas de qualquer tipo de violência. | Não encontrou aplicações que pudessem catalogar de forma fácil e intuitiva os projetos sociais mais relevantes aos seus interesses. |Assistir filmes, Ir à academia, Praticar yoga / Linkedin, Instagram, Facebook, Pinterest|
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
