@@ -71,14 +71,20 @@ Obs.: todas as informações para gerar os indicadores devem estar no diagrama d
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, foram observadas as necessidades dos usuários bem como características técnicas relevantes à disponibilidade do sistema
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O usuário pode se cadastrar, fazer login no sistema, e editar informações | ALTA | 
+|RF-002| O usuário pode pesquisar por organizações/projetos sociais de acordo com critérios estabelecidos  | ALTA |
+|RF-003| O usuário pode favoritar organizações/projetos sociais | ALTA |
+|RF-004| Usuário terá acesso às organizações favoritadas em sua página inicial de perfil | ALTA |
+|RF-005| O usuário pode clicar em cards com “imagem da organização” favoritada para acessar informações e a página da organização  | ALTA |
+|RF-006| Usuário pode registrar a quantidade doada para determinada instituição  | BAIXA |
+|RF-007| Usuário verá uma “barra de progresso” indicando o valor doado para cada instituição favoritada por ele  | BAIXA |
+|RF-008| Usuário pode acrescentar “comentários” na página da instituição favoritada  | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
