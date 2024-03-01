@@ -2,7 +2,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação
 
 ![Arquitetura da Solução](img/02-mob-arch.png)
 
@@ -26,7 +26,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 ## Esquema Relacional
 
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
+
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
 > - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
