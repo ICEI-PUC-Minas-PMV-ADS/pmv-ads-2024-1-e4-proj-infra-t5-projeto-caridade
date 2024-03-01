@@ -6,18 +6,18 @@
 
 `Eixo 4`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Buscador de projetos de caridade que tem como objetivo auxiliar na divulgação e busca de informações relativas a instituições filantrópicas espalhadas globalmente.
 
 ## Integrantes
 
-* Amanda de Almeida Silva
-* Felipe Augusto Duque Ferreira
-* Lucas Russo Correa Dias
-* Vinícius Carneiro Gonçalves
+- Amanda de Almeida Silva
+- Felipe Augusto Duque Ferreira
+- Lucas Russo Correa Dias
+- Vinícius Carneiro Gonçalves
 
 ## Orientador
 
-* Pedro Felipe Alves de Oliveira
+- Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
