@@ -2,9 +2,11 @@
 
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
 
-A seguir, apresentamos a arquitetura da solução com seus respectivos diagramas e detalhamentos. Juntamente com as justificativas das escolhas de cada tecnologia aqui listada.
+A seguir, destacamos a arquitetura da solução, incluindo diagramas detalhados e explicações fundamentadas nas escolhas de cada tecnologia mencionada. O diagrama de alto nível ilustra a estrutura da arquitetura da solução, identificando seus principais atores, conforme apresentado abaixo:
 
-![Arquitetura da Solução](img/02-mob-arch.png)
+<br>
+
+![Arquitetura da Solução](/docs/img/arquitetura-projeto-caridade.jpg)
 
 ## Diagrama de Classes
 
