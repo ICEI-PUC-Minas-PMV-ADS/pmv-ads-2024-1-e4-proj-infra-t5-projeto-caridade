@@ -37,7 +37,10 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+
+Na elaboração da arquitetura de um projeto, uma fase crucial é a descrição das tecnologias e ferramentas a serem empregadas em sua construção. Essa etapa é essencial, pois contextualiza e esclarece o escopo completo de desenvolvimento no qual os desenvolvedores estarão envolvidos.
+
+Abaixo, apresentamos duas tabelas: a primeira lista as principais tecnologias empregadas no desenvolvimento da aplicação, enquanto a segunda destaca as ferramentas a serem utilizadas para o mesmo propósito.
 
 | Linguagem/Framework  | Finalidade |
 | ------------- | ------------- |
@@ -48,7 +51,15 @@ Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, 
 | Identity | Framework utilizado para criação do fluxo de autenticação no Backend ASP.NET |
 | React | Framework de desenvolvimento web utilizado para construção da aplicação WEB |
 | React Native | Framework de desenvolvimento mobile utilizado para construção da aplicação móvel do projeto |
+ 
+<br>
+<br>
 
+| Ferramenta | Finalidade |
+|------------|------------|
+| MySQL | Banco de dados para armazenamento dos dados necessários para funcionamento da aplicação |
+| Global Giving API | Api externa utilizada para busca de dados relativos as organizações filantrópicas |
+| Visual Studio / Visual Studio Code | IDEs utilizadas para o desenvolvimento da aplicação Backend e das aplicações Frontend respectivamente |
 
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
 
