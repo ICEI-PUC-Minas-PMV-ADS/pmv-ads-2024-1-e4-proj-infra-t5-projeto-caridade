@@ -1,12 +1,37 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+## Decisões de arquitetura
 
-A seguir, destacamos a arquitetura da solução, incluindo diagramas detalhados e explicações fundamentadas nas escolhas de cada tecnologia mencionada. O diagrama de alto nível ilustra a estrutura da arquitetura da solução, identificando seus principais atores, conforme apresentado abaixo:
+Diante da proposta do semestre, que tem como pauta principal a contrução de uma aplicação distribuída, e levando em conta os objetivos do projeto destacados nas seções anteriores, a descrição das decisões de arquitetura apresentada abaixo busca elucidar os seguintes pontos:
+
+    - Problema do projeto;
+    - Necessidades;
+    - Restrições;
+    - Resolução;
+    - Argumentos.
+
+
+O problema arquitetural principal a ser resolvido é a construção de uma aplicação distribuída, a qual diferente das arquiteturas abordadas anteriormente funcione de forma isolada, porém com cada um de seus principais componentes trabalhando de maneira cooperativa e orquestrada.
+
+No contexto do projeto aqui descrito, portanto teríamos alguns componentes a serem considerados para o funcionamento desejado do produto final, que são:
+
+    - Aplicação frontend WEB;
+    - Aplicação frontend mobile;
+    - Aplicação backend;
+    - Banco de dados;
+
+Para garantir a operação coordenada da aplicação como um todo, mantendo, no entanto, seus componentes isolados como descrito acima, optou-se pelo uso de uma arquitetura baseada em serviços. Essa abordagem isola cada unidade ou conjunto de funcionalidades com suas devidas responsabilidades, informações e implementações. Além disso dá a liberdade de escolha nas tecnologias para construção de cada um deles, capacidade de manutenção sem afetar o todo e eventual escalabilidade. 
+
+Uma abordagem baseada em serviços oferece diversas vantagens em comparação com uma arquiteura monolítica. No entanto os pontos que foram cruciais para optar-se pelo seu uso foram o isolamento, capacidade de desenvolvimento dividido em equipes sem uma interdependência elevada e manutenção facilitada.
+
+A seguir, assim como nas demais seções, enfatiza-se a arquitetura da solução, compreendendo diagramas detalhados e explicações embasadas nas escolhas de cada tecnologia mencionada. O diagrama de alto nível delineia a estrutura da arquitetura da solução, identificando seus principais atores, conforme apresentado abaixo:
 
 <br>
 
 ![Arquitetura da Solução](/docs/img/arquitetura-projeto-caridade.jpg)
+
+<br>
+
 
 ## Diagrama de Classes
 
