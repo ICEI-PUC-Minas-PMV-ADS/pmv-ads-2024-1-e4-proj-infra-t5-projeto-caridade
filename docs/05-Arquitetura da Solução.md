@@ -2,7 +2,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+A seguir, apresentamos a arquitetura da solução com seus respectivos diagramas e detalhamentos. Juntamente com as justificativas das escolhas de cada tecnologia aqui listada.
 
 ![Arquitetura da Solução](img/02-mob-arch.png)
 
@@ -38,6 +38,17 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 ## Tecnologias Utilizadas
 
 Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+
+| Linguagem/Framework  | Finalidade |
+| ------------- | ------------- |
+| JavaScript  | Linguagem de programação utilizada para o desenvolvimento das aplicações Frontend do projeto tanto no mobile, com a utilização do framework React Native, quanto na Web com a utilização do framework React  |
+| C#  | Linguagem de programação utilizada para a codificação da aplicação Backend do projeto, juntamente com o ASP.NET e o Entity Framework  |
+| ASP.NET  | Framework utilizado para construção da aplicação Backend  |
+| Entity Framework | ORM utilizado para elaboração do mapeamento objeto-relacional facilitando a integração com bancos de dados utilizando ASP.NET|
+| Identity | Framework utilizado para criação do fluxo de autenticação no Backend ASP.NET |
+| React | Framework de desenvolvimento web utilizado para construção da aplicação WEB |
+| React Native | Framework de desenvolvimento mobile utilizado para construção da aplicação móvel do projeto |
+
 
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
 
