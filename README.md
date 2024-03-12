@@ -11,6 +11,7 @@ Buscador de projetos de caridade que tem como objetivo auxiliar na divulgação 
 ## Integrantes
 
 - Amanda de Almeida Silva
+- Augusto Hiroshi
 - Felipe Augusto Duque Ferreira
 - Lucas Russo Correa Dias
 - Vinícius Carneiro Gonçalves
