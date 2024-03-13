@@ -47,7 +47,7 @@ O projeto está sendo implementado seguindo os princípios do Scrum com as sprin
 
 O quadro kanban que está sendo utilizado pode ser acessado através da URL (https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/878)
 
-<img width="482" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/977cca28-da42-42a1-9942-e0dad51fc412">
+<img width="1269" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/59f6aee4-d2b9-4c91-86b7-be1871006cb7">
 
 ### Ferramentas
 
