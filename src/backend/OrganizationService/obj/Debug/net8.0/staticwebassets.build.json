@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pPLeotDBzAJf8HYr+aTAdLN55D8CnepSvtvIg6W4fco=",
+  "Source": "OrganizationService",
+  "BasePath": "_content/OrganizationService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
