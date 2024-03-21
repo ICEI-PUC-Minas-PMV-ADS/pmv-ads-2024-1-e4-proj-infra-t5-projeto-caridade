@@ -1,0 +1,55 @@
+# Ignore Visual Studio files
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore NuGet package directory
+*/packages/
+*/.idea/
+
+# Ignore build output directories
+*/bin/
+*/obj/
+
+# Ignore .NET Core build and debug output
+bin/
+obj/
+
+# Ignore Visual Studio files
+*.user
+*.suo
+*.cache
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.opensdf
+*.sln.docstates
+
+# Ignore ReSharper files
+_ReSharper*/
+*.resharper
+[Tt]humbs.db
+[Tt]est[Rr]esult*
+*.snap
+*.vspx
+
+# Ignore Rider files
+.idea/
+*.sln.iml
+
+# Ignore build artifacts
+[Bb]in/
+[Oo]bj/
+
+/.config
+
+/src/backend/ApiGateway/bin/
+/src/backend/ApiGateway/obj/
+/src/backend/OrganizationService/bin/
+/src/backend/OrganizationService/obj/
+/src/backend/UserService/bin/
+/src/backend/UserService/obj/
