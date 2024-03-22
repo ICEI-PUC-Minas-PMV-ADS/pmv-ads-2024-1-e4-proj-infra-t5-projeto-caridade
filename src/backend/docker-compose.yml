@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  apigateway:
+    image: ${APIGATEWAY_IMAGE:-apigateway}
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    ports:
+      - "5076:5076"
+    depends_on:
+      - organizationservice
+      - userservice
+
+  organizationservice:
+    image: ${ORGANIZATIONSERVICE_IMAGE:-organizationservice}
+    build:
+      context: ./OrganizationService
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+
+  userservice:
+    image: ${USERSERVICE_IMAGE:-userservice}
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    ports:
+      - "8082:80"
