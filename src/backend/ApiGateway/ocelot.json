@@ -9,7 +9,7 @@
           "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/todos/{id}",
+      "UpstreamPathTemplate": "/api/todos/{id}",
       "UpstreamHttpMethod": ["Get"]
     },
     {
@@ -17,11 +17,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5185
+          "Host": "organizationservice",
+          "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/wheaterforecast2",
+      "UpstreamPathTemplate": "/api/organization/weatherforecast2",
       "UpstreamHttpMethod": ["Get"]
     },
     {
@@ -29,15 +29,15 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5157
+          "Host": "userservice",
+          "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/wheaterforecast",
+      "UpstreamPathTemplate": "/api/user/weatherforecast",
       "UpstreamHttpMethod": ["Get"]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5076"
+    "BaseUrl": "https://localhost:5000"
   }
 }

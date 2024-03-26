@@ -1,29 +1,43 @@
 version: "3.8"
 
 services:
-  apigateway:
-    image: ${APIGATEWAY_IMAGE:-apigateway}
-    build:
-      context: ./ApiGateway
-      dockerfile: Dockerfile
-    ports:
-      - "5076:5076"
-    depends_on:
-      - organizationservice
-      - userservice
-
   organizationservice:
     image: ${ORGANIZATIONSERVICE_IMAGE:-organizationservice}
+    hostname: organizationservice
     build:
       context: ./OrganizationService
       dockerfile: Dockerfile
     ports:
-      - "8081:80"
+      - "8081:8080"
+    networks:
+      - apigateway
 
   userservice:
     image: ${USERSERVICE_IMAGE:-userservice}
+    hostname: userservice
     build:
       context: ./UserService
       dockerfile: Dockerfile
     ports:
-      - "8082:80"
+      - "8082:8080"
+    networks:
+      - apigateway
+
+  apigateway:
+    image: ${APIGATEWAY_IMAGE:-apigateway}
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - organizationservice
+      - userservice
+    networks:
+      - apigateway
+
+networks:
+  apigateway:
+    name: apigateway
