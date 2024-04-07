@@ -1,6 +1,6 @@
 namespace MongoSettings.Models;
 
-public class MongoDBSettigs
+public class MongoDBSettings
 {
     public string ConnectionURI { get; set; } = null!;
     public string DatabaseName { get; set; } = null!;

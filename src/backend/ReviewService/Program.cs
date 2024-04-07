@@ -1,4 +1,13 @@
+using MongoDB.Bson;
+using MongoDB.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var mongoClient = new MongoClient(Configuration["ConnectionStrings:MongoDB"]);
+IMongoDatabase database = mongoClient.GetDatabase("ReviewDB");
+var emp = database.GetCollection<BsonDocument>("Reviews")
+
+builder.AddSingleton<IMongoDatabase>(database);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
