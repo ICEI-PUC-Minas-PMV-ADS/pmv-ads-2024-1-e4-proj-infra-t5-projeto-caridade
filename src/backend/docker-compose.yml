@@ -1,13 +1,13 @@
 version: "3.8"
 
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
-    ports:
-      - 27017:27017
-    networks:
-      - apigateway
+  # mongodb:
+  #   image: mongo:latest
+  #   container_name: mongodb
+  #   ports:
+  #     - 27017:27017
+  #   networks:
+  #     - apigateway
 
   organizationservice:
     image: ${ORGANIZATIONSERVICE_IMAGE:-organizationservice}
@@ -31,6 +31,17 @@ services:
     networks:
       - apigateway
 
+  reviewservice:
+    image: ${REVIEWSERVICE_IMAGE:-reviewservice}
+    hostname: reviewservice
+    build:
+      context: ./ReviewService
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8080"
+    networks:
+      - apigateway
+
   apigateway:
     image: ${APIGATEWAY_IMAGE:-apigateway}
     environment:
@@ -43,6 +54,7 @@ services:
     depends_on:
       - organizationservice
       - userservice
+      - reviewservice
     networks:
       - apigateway
 

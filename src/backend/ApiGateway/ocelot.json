@@ -1,18 +1,6 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/todos/{id}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
-        }
-      ],
-      "UpstreamPathTemplate": "/api/todos/{id}",
-      "UpstreamHttpMethod": ["Get"]
-    },
-    {
       "DownstreamPathTemplate": "/weatherforecast2",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -34,6 +22,18 @@
         }
       ],
       "UpstreamPathTemplate": "/api/user/weatherforecast",
+      "UpstreamHttpMethod": ["Get"]
+    },
+    {
+      "DownstreamPathTemplate": "/weatherforecast3",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "reviewservice",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/api/review/weatherforecast3",
       "UpstreamHttpMethod": ["Get"]
     }
   ],
