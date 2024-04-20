@@ -1,0 +1,8 @@
+// Logo = #004E63
+// texto em bold = #004E63
+// textos = #798DA3
+// botões = #006E8C 
+// cAIXAS = #798DA3
+// texto dentro do botão = #FFFFFF
+// botão cancelar = #C9D3DD
+// linhas = #E1E1E2
