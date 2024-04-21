@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 EXPOSE 8080
-COPY UserService.csproj .
+COPY UserService.csproj ./
 RUN dotnet restore
 COPY . .
 RUN dotnet publish -c release -o /app
