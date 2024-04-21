@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', padding: '60px' }}>
+      <div style={{ display: 'flex', justifyContent: 'left', gap: '40px', padding: '60px' }}>
         <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '10px'  }}>
           <h1>Encontre projetos que te engajam!</h1>
           <span>

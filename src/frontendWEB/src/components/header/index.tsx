@@ -6,7 +6,7 @@ function Header() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px' }}>
-          <h1>Charity Finder</h1>
+          <Link to="/"><h1>Charity Finder</h1></Link>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Link to='/search'><BsSearch /></Link>
             <Link to='/login'><button>Login</button></Link>
