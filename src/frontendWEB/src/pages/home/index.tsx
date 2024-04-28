@@ -32,6 +32,9 @@ function Home() {
           <Link to="/register">
             <button>Criar conta</button>
           </Link>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
         </div>
         <div>
           <img src="" alt="teste" />
