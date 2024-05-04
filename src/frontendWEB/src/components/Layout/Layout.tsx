@@ -7,7 +7,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <Box height="100dvh">
       <Header />
-      <Container sx={{ height: "100%", width: "100vw" }}>{children}</Container>
+      <Container sx={{ height: "100%", padding: 8 }}>{children}</Container>
       <Footer />
     </Box>
   );
