@@ -1,19 +1,19 @@
-*{
+* {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  color: #798DA3;
+  color: #798da3;
 }
 
 h1 {
-  color: #004E63;
+  color: #004e63;
 }
 
-button{ 
-  background-color: #006E8C;
+button {
+  background-color: #006e8c;
   border: none;
   border-radius: 40px;
   color: white;

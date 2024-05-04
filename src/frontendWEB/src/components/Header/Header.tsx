@@ -1,25 +1,30 @@
-import { BsSearch } from "react-icons/bs"
-import { Link } from "react-router-dom"
+import { Box, Typography } from "@mui/material";
+import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function Header() {
+  return (
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      p={2}
+      borderBottom="solid 1px"
+    >
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <Typography variant="h4" color="#004e63">
+          Charity Finder
+        </Typography>
+      </Link>
+      <Box display="flex" flexDirection="row" alignItems="center" gap={4}>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+        <Link to="/search">
+          <BsSearch />
+        </Link>
+      </Box>
+    </Box>
+  );
+}
 
-    return (
-      <div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px' }}>
-          <Link to="/"><h1>Charity Finder</h1></Link>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Link to='/search'><BsSearch /></Link>
-            <Link to='/login'><button>Login</button></Link>
-          </div>
-        </div>
-        <hr
-          style={{
-            color: "#E1E1E2",
-          }}
-        />
-      </div>
-    )
-  }
-  
-  export default Header
-  
+export default Header;
