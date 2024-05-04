@@ -1,6 +1,6 @@
 import { Box, Button, Card, TextField, Typography } from "@mui/material";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function Register() {
   return (
