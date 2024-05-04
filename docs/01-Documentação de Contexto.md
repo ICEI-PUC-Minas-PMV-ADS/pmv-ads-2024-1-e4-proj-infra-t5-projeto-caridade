@@ -18,5 +18,3 @@ Este tema foi escolhido pelo grupo pelo desejo dos integrantes de realizar um pr
 ## Público-alvo
 
 Pessoas ou empresas que desejam realizar doações para instituições filantrópicas, porém não conseguem encontrar a instituição desejada ou têm dificuldade em decidir a qual instituição ajudar.
-
-.
