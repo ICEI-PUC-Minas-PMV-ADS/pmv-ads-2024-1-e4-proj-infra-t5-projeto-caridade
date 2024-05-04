@@ -10,8 +10,8 @@ function Register() {
         style={{
           display: "flex",
           justifyContent: "left",
-          gap: "40px",
-          padding: "60px",
+          gap: "500px",
+          padding: "100px",
         }}
       >
         <Card variant="outlined">
@@ -21,8 +21,15 @@ function Register() {
           <Typography variant="h6" component="h6">
             Informações de usuário
           </Typography>
-          <Box display="flex" flexDirection="column">
-            <TextField id="outlined-basic" label="Nome" variant="outlined" />
+          <Box
+            component="form"
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "25ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <TextField label="Nome" id="outlined-basic" variant="outlined" />
             <TextField
               id="outlined-basic"
               label="Sobrenome"
