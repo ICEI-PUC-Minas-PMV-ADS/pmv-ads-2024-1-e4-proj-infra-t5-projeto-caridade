@@ -1,19 +1,96 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+## Caso de Teste CT-01: Registro 
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+Requisito Associado RF – 001 - O usuário pode fazer registro no sistema.
 
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
+Objetivo do Teste Verificar se o usuário consegue fazer registro na aplicação. 
+
+Passos:
+
+-	Acessar a site;
+-	Clicar em "Criar conta";
+-	Preencher os campos obrigatórios;
+-	Clicar em "Cadastrar";
+  
+Critério de Êxito: Redirecionamento para a tela “Login”.
+____________________________________________________________________________________________________________________________________________________________________________
+
+
+## Caso de Teste CT-02: Fazer Login 
+
+Requisito Associado RF-001 – Os usuários podem logar no sistema.
+
+Objetivo do Teste Verificar se os usuários podem logar em suas contas. 
+
+Passos:
+
+- Acessar site;
+- Clicar em "Login";
+- Preencher os campos obrigatórios;
+- Clicar em "Login";
+  
+Critério de Êxito: Redirecionamento para a tela inicial.
+____________________________________________________________________________________________________________________________________________________________________________
+
+
+## Caso de Teste CT-03: Buscar organizações de forma livre
+
+Requisito Associado RF-002 – O usuário pode pesquisar por organizações/projetos sociais.
+
+Objetivo do Teste Verificar se os usuários conseguem buscar por organizações.
+
+Passos:
+
+-	Acessar a aplicação;
+-	Clicar em "Login";
+-	Preencher o campo de busca com o nome da organização;
+  
+Critério de Êxito: listar organizações de acordo com a busca.
+____________________________________________________________________________________________________________________________________________________________________________
+
+
+## Caso de Teste CT-04: Buscar organizações através de filtros.
+
+Requisito Associado RF-002 – O usuário pode pesquisar por organizações/projetos sociais de acordo com critérios estabelecidos (Países e Temas).
+
+Objetivo do Teste Verificar se os usuários conseguem buscar por organizações aplicando filtro de “Países” e “Temas”. 
+
+Passos:
+
+- Selecionar os critérios desejados nos campos de filtro;
+-	Clicar em buscar;
+  
+Critério de Êxito: listar organizações de acordo com a busca
+____________________________________________________________________________________________________________________________________________________________________________
+
+
+## Caso de Teste CT-05: Favoritar e exibir favoritos
+
+Requisito Associado RF-003, RF-004 e RF-005 – Os usuários podem favoritar/desfavoritar organizações e elas serão exibidas na tela inicial do usuário.
+
+Objetivo do Teste Verificar se os usuários conseguem favoritar e exibir organizações na tela inicial.
+
+Passos:
+
+-	Clicar em "Favoritar";
+-	Retornar à página inicial de usuário
+  
+ Critério de Êxito: Visualiza organizações favoritadas.
+____________________________________________________________________________________________________________________________________________________________________________
+
  
-## Ferramentas de Testes (Opcional)
+## Caso de Teste CT-06: Deixar comentários nas páginas das organizações.
 
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+Requisito Associado RF-008 – O usuário acrescentar “comentários” na página da instituição favoritada.
+
+Objetivo do Teste Verificar se o usuário consegue registrar comentários nas páginas das organizações.
+
+Passos:
+
+-	Clicar no card da organização;
+-	Rolar até o campo de “comentários”
+-	Escrever comentário
+  
+Critério de Êxito: O usuário consegue registrar e visualizar comentários.
+____________________________________________________________________________________________________________________________________________________________________________
