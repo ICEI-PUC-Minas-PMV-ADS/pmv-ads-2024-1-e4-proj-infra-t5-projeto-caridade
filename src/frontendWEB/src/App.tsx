@@ -3,6 +3,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Search from "./pages/Search/Search";
+import { Institutional } from "./pages";
+import { Layout } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +23,18 @@ const router = createBrowserRouter([
     path: "/search",
     element: <Search />,
   },
+  {
+    path: "/institutional",
+    element: <Institutional />,
+  },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    // <Layout>
+    <RouterProvider router={router} />
+    // </Layout>
+  );
 }
 
 export default App;
