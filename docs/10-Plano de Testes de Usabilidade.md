@@ -1,98 +1,44 @@
 # Plano de Testes de Usabilidade
 
+# Plano de Testes de Usabilidade
+
 O teste de usabilidade permite avaliar a qualidade da interface com o usuário da aplicação interativa. O Plano de Testes de Software é gerado a partir da especificação do sistema e consiste em casos de testes que deverão ser executados quando a implementação estiver parcial ou totalmente pronta.
 
-## Caso de Teste CT-01: Registro 
+1. Objetivos:
+   
+-	Detectar problemas de interface;
+-	Verificar a acessibilidade do aplicativo;
+-	Avaliar a satisfação do usuário;
+-	Validar o software se o usuário consegue ter informações dos pontos registrados;
+-	Verificar a experiência geral do usuário durante o teste;
+-	Verificar o cadastro dos usuários.
 
-Requisito Associado RF – 001 - O usuário pode fazer registro no sistema.
+2. Participantes:
 
-Objetivo do Teste Verificar se o usuário consegue fazer registro na aplicação. 
+Recomenda-se convidar pessoas que representam o público-alvo do aplicativo. Podemos citar, por exemplo, funcionários de empresas, proprietários de empresas, gerentes de RH, bem como profissionais de TI que podem ajudar a identificar quaisquer problemas técnicos e avaliar a segurança do aplicativo. Dessa forma, conseguiremos diversificar nossos usuários e teremos um feedback melhor.
 
-Passos:
+3. Tarefas do teste: 
 
--	Acessar a site;
--	Clicar em "Criar conta";
--	Preencher os campos obrigatórios;
--	Clicar em "Cadastrar";
-  
-Critério de Êxito: Redirecionamento para a tela “Login”.
-____________________________________________________________________________________________________________________________________________________________________________
+Pediremos para os participantes realizarem as seguintes tarefas:
 
+-	Fazer o registro de entrada e saída usando o aplicativo;
+-	Visualizar o histórico de registros de ponto;
+-	Solicitar alterações em seus registros de ponto;
+-	Navegar pelo aplicativo para avaliar a interface do usuário;
+-	Acessar o aplicativo em diferentes dispositivos e avaliar a experiência de uso.
 
-## Caso de Teste CT-02: Fazer Login 
+4. Métricas de sucesso: 
 
-Requisito Associado RF-001 – Os usuários podem logar no sistema.
+As métricas de sucesso serão o tempo que leva para os usuários concluírem cada tarefa e se são capazes de concluí-las com sucesso.  Outra questão é contar o número de erros que eles cometem durante a execução das tarefas e também coletar o feedback dos participantes sobre a satisfação de uso do aplicativo.
 
-Objetivo do Teste Verificar se os usuários podem logar em suas contas. 
+5. Métodos de coleta de dados: 
 
-Passos:
+Serão utilizados os seguintes métodos para coletar dados durante o teste de usabilidade:
 
-- Acessar site;
-- Clicar em "Login";
-- Preencher os campos obrigatórios;
-- Clicar em "Login";
-  
-Critério de Êxito: Redirecionamento para a tela inicial.
-____________________________________________________________________________________________________________________________________________________________________________
+-	Observação direta dos participantes durante a realização das tarefas;
+-	Registro das respostas dos participantes aos questionários pós-teste;
+-	Análise dos dados coletados durante o teste para identificar padrões e tendências.
 
+6. Análise dos resultados: 
 
-## Caso de Teste CT-03: Buscar organizações de forma livre
-
-Requisito Associado RF-002 – O usuário pode pesquisar por organizações/projetos sociais.
-
-Objetivo do Teste Verificar se os usuários conseguem buscar por organizações.
-
-Passos:
-
--	Acessar a aplicação;
--	Clicar em "Login";
--	Preencher o campo de busca com o nome da organização;
-  
-Critério de Êxito: listar organizações de acordo com a busca.
-____________________________________________________________________________________________________________________________________________________________________________
-
-
-## Caso de Teste CT-04: Buscar organizações através de filtros.
-
-Requisito Associado RF-002 – O usuário pode pesquisar por organizações/projetos sociais de acordo com critérios estabelecidos (Países e Temas).
-
-Objetivo do Teste Verificar se os usuários conseguem buscar por organizações aplicando filtro de “Países” e “Temas”. 
-
-Passos:
-
-- Selecionar os critérios desejados nos campos de filtro;
--	Clicar em buscar;
-  
-Critério de Êxito: listar organizações de acordo com a busca
-____________________________________________________________________________________________________________________________________________________________________________
-
-
-## Caso de Teste CT-05: Favoritar e exibir favoritos
-
-Requisito Associado RF-003, RF-004 e RF-005 – Os usuários podem favoritar/desfavoritar organizações e elas serão exibidas na tela inicial do usuário.
-
-Objetivo do Teste Verificar se os usuários conseguem favoritar e exibir organizações na tela inicial.
-
-Passos:
-
--	Clicar em "Favoritar";
--	Retornar à página inicial de usuário
-  
- Critério de Êxito: Visualiza organizações favoritadas.
-____________________________________________________________________________________________________________________________________________________________________________
-
- 
-## Caso de Teste CT-06: Deixar comentários nas páginas das organizações.
-
-Requisito Associado RF-008 – O usuário acrescentar “comentários” na página da instituição favoritada.
-
-Objetivo do Teste Verificar se o usuário consegue registrar comentários nas páginas das organizações.
-
-Passos:
-
--	Clicar no card da organização;
--	Rolar até o campo de “comentários”
--	Escrever comentário
-  
-Critério de Êxito: O usuário consegue registrar e visualizar comentários.
-____________________________________________________________________________________________________________________________________________________________________________
+Os resultados serão analisados para identificar os problemas de usabilidade mais comuns, avaliar a facilidade de uso do site e fornecer feedback sobre como melhorar a experiência do usuário. As recomendações serão apresentadas em um relatório de teste de usabilidade detalhado.
