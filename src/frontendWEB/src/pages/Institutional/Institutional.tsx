@@ -7,16 +7,25 @@ export function Institutional() {
         Quem somos ?
       </Typography>
       <Typography mt={4} align="justify">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto quidem,
-        tenetur magnam labore ad nam blanditiis sit non unde dolorum sint porro
-        voluptate quisquam quas! Provident accusantium reprehenderit doloribus
-        ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Voluptates autem eligendi alias eveniet placeat deleniti fuga! Quisquam,
-        modi, omnis repudiandae cupiditate pariatur ipsam id eligendi, commodi
-        beatae velit vero hic! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Obcaecati ad nisi sequi nemo odit quasi tenetur minus
-        dignissimos, est aut. Omnis accusamus consequatur, delectus voluptatem
-        quibusdam voluptatum odit minima quae.
+        Somos estudantes do quarto período do curso de Análise e Desenvolvimento
+        de Sistemas da PUC Minas, e desenvolvemos essa aplicação como requisito
+        de aprovação no projeto de "Desenvolvimento de Aplicação Distribuída" do
+        Eixo 4.
+        <Typography mt={4} align="justify"></Typography>
+        Nossa aplicação é um buscador de projetos de caridade que tem como
+        objetivo auxiliar na divulgação e busca de informações relativas a
+        instituições filantrópicas em âmbito global.
+        <Typography mt={4} align="justify"></Typography>A documentação de
+        contexto do projeto, bem como código fonte podem ser acessadas{" "}
+        <span>
+          <a
+            target="_blank"
+            href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade?tab=readme-ov-file"
+          >
+            neste link
+          </a>
+        </span>
+        .
       </Typography>
     </Box>
   );
