@@ -4,7 +4,6 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Search from "./pages/Search/Search";
 import { Institutional } from "./pages";
-import { Layout } from "./components";
 
 const router = createBrowserRouter([
   {

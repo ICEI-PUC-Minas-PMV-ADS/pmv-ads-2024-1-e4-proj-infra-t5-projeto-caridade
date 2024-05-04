@@ -1,19 +1,21 @@
-function Footer() {
+import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
-    return (
-      <div style={{ display: "flex", flexDirection: 'column' }}>
-        <hr
-          style={{
-            color: "#E1E1E2",
-          }}
-        />
-        <div style={{ display: "flex", gap: '40px', justifyContent: "center", padding: '20px' }}>
-          <p>Quem somos?</p>
-          <p>Todos os direitos reservados</p>
-        </div>
-      </div>
-    )
-  }
-  
-  export default Footer
-  
+function Footer() {
+  return (
+    <Box
+      display="flex"
+      justifyContent="center"
+      gap={4}
+      p={2}
+      borderTop="solid 1px"
+    >
+      <Link to="/institutional">
+        <p>Quem somos?</p>
+      </Link>
+      <p>Todos os direitos reservados</p>
+    </Box>
+  );
+}
+
+export default Footer;

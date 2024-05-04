@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,7 @@ function Header() {
       </Link>
       <Box display="flex" flexDirection="row" alignItems="center" gap={4}>
         <Link to="/login">
-          <button>Login</button>
+          <Button variant="contained">Login</Button>
         </Link>
         <Link to="/search">
           <BsSearch />

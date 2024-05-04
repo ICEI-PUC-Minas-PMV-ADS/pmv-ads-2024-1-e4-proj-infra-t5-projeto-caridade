@@ -8,16 +8,6 @@
   color: #798da3;
 }
 
-h1 {
-  color: #004e63;
-}
-
-button {
-  background-color: #006e8c;
-  border: none;
-  border-radius: 40px;
-  color: white;
-  font-weight: bolder;
-  width: 130px;
-  height: 40px;
+a {
+  text-decoration: none;
 }
