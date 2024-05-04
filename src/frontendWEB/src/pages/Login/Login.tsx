@@ -21,7 +21,7 @@ function Login() {
           <Typography
             variant="body1"
             component="h1"
-            style={{ padding: "10px" }}
+            style={{ padding: "20px" }}
           >
             Endereço de E-mail
           </Typography>
@@ -39,7 +39,7 @@ function Login() {
           <Typography
             variant="body1"
             component="h1"
-            style={{ padding: "10px" }}
+            style={{ padding: "20px" }}
           >
             Senha
           </Typography>
@@ -55,16 +55,16 @@ function Login() {
             />
           </Box>
           <Button
-            sx={{ borderRadius: 40 }}
+            sx={{ borderRadius: 30 }}
             variant="contained"
-            style={{ padding: "30px" }}
+            style={{ padding: "10px" }}
           >
             Login
           </Button>
           <Button
-            sx={{ borderRadius: 40 }}
+            sx={{ borderRadius: 30 }}
             variant="contained"
-            style={{ padding: "30px" }}
+            style={{ padding: "10px" }}
           >
             Esqueceu a Senha
           </Button>
@@ -76,7 +76,7 @@ function Login() {
             Não possui cadastro?
           </Typography>
           <Button
-            sx={{ borderRadius: 40 }}
+            sx={{ borderRadius: 30 }}
             variant="contained"
             href="/register"
             style={{ padding: "10px" }}
