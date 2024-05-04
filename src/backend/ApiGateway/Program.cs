@@ -1,5 +1,9 @@
 using Ocelot.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
+using System.IO;
 using Ocelot.Middleware;
+using Microsoft.Extensions.Configuration;
 
 namespace ApiGateway
 {
@@ -7,7 +11,7 @@ namespace ApiGateway
     {
         public static void Main(string[] args)
         {
-            new WebHostBuilder()
+            var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureAppConfiguration(
@@ -27,6 +31,7 @@ namespace ApiGateway
                 )
                 .ConfigureServices(s =>
                 {
+                    s.AddControllers();
                     s.AddOcelot();
                 })
                 .ConfigureLogging(
@@ -39,8 +44,8 @@ namespace ApiGateway
                 {
                     app.UseOcelot().Wait();
                 })
-                .Build()
-                .Run();
+                .Build();
+            host.Run();
         }
     }
 }
