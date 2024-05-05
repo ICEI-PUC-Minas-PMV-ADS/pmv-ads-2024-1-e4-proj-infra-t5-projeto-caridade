@@ -3,3 +3,4 @@ export * from "./Login/Login";
 export * from "./Register/Register";
 export * from "./Search/Search";
 export * from "./Institutional/Institutional";
+export * from "./Organization/Organization";

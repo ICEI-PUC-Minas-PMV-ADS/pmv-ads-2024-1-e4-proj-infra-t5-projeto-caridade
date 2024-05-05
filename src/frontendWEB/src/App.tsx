@@ -5,6 +5,7 @@ import Register from "./pages/Register/Register";
 import Search from "./pages/Search/Search";
 import { Institutional } from "./pages";
 import { Layout } from "./components";
+import Organization from "./pages/Organization/Organization";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,15 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Institutional />
+      </Layout>
+    ),
+  },
+
+  {
+    path: "/organization/:id",
+    element: (
+      <Layout>
+        <Organization />
       </Layout>
     ),
   },
