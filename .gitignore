@@ -47,9 +47,4 @@ _ReSharper*/
 
 /.config
 
-/src/backend/ApiGateway/bin/
-/src/backend/ApiGateway/obj/
-/src/backend/OrganizationService/bin/
-/src/backend/OrganizationService/obj/
-/src/backend/UserService/bin/
-/src/backend/UserService/obj/
+**/node_modules/**
