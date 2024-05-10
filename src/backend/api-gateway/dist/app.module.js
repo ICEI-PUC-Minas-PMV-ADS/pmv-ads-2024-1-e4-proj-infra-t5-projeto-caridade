@@ -26,6 +26,22 @@ exports.AppModule = AppModule = __decorate([
                         port: 4200,
                     },
                 },
+                {
+                    name: 'REVIEW_SERVICE',
+                    transport: microservices_1.Transport.TCP,
+                    options: {
+                        host: '127.0.0.1',
+                        port: 4300,
+                    },
+                },
+                {
+                    name: 'ORGANIZATION_SERVICE',
+                    transport: microservices_1.Transport.TCP,
+                    options: {
+                        host: '127.0.0.1',
+                        port: 4400,
+                    },
+                },
             ]),
         ],
         controllers: [app_controller_1.AppController],

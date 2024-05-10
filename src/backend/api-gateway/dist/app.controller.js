@@ -14,28 +14,49 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
 const microservices_1 = require("@nestjs/microservices");
 let AppController = class AppController {
-    constructor(appService, userClient) {
-        this.appService = appService;
+    constructor(userClient, reviewClient, organizationService) {
         this.userClient = userClient;
+        this.reviewClient = reviewClient;
+        this.organizationService = organizationService;
     }
     async getHello() {
         return this.userClient.send({ cmd: 'HELLO_USER' }, '');
     }
+    async getReview() {
+        return this.reviewClient.send({ cmd: 'HELLO_REVIEW' }, '');
+    }
+    async getOrganization() {
+        return this.organizationService.send({ cmd: 'HELLO_ORGANIZATION' }, '');
+    }
 };
 exports.AppController = AppController;
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('/user'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getHello", null);
+__decorate([
+    (0, common_1.Get)('/review'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getReview", null);
+__decorate([
+    (0, common_1.Get)('/organization'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getOrganization", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
-    __param(1, (0, common_1.Inject)('USER_SERVICE')),
-    __metadata("design:paramtypes", [app_service_1.AppService,
+    __param(0, (0, common_1.Inject)('USER_SERVICE')),
+    __param(1, (0, common_1.Inject)('REVIEW_SERVICE')),
+    __param(2, (0, common_1.Inject)('ORGANIZATION_SERVICE')),
+    __metadata("design:paramtypes", [microservices_1.ClientProxy,
+        microservices_1.ClientProxy,
         microservices_1.ClientProxy])
 ], AppController);
 //# sourceMappingURL=app.controller.js.map

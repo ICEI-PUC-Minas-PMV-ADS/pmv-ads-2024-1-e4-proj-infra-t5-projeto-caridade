@@ -14,6 +14,22 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           port: 4200,
         },
       },
+      {
+        name: 'REVIEW_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: '127.0.0.1',
+          port: 4300,
+        },
+      },
+      {
+        name: 'ORGANIZATION_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: '127.0.0.1',
+          port: 4400,
+        },
+      },
     ]),
   ],
   controllers: [AppController],
