@@ -9,12 +9,12 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '127.0.0.1',
-      port: 4200,
+      port: 4400,
     },
   });
 
   await app.startAllMicroservices();
-  await app.listen(4200);
-  console.log(`UserService is running on`, await app.getUrl());
+  await app.listen(4400);
+  console.log(`OrganizationService is running on`, await app.getUrl());
 }
 bootstrap();
