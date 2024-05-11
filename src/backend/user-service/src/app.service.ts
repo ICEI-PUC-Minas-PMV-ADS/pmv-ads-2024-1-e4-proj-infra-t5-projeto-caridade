@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ICreateUserDto } from './app.user.dto';
+import { ICreateUserDto, IUpdateUserDto } from './app.user.dto';
 import { PrismaClient } from '@prisma/client';
 import { User } from './app.entitie-user';
 
@@ -36,6 +36,19 @@ export class AppService {
         last_name: user.last_name,
         name: user.name,
         password: user.password,
+      }
+    })
+  }
+
+  async update(data: IUpdateUserDto): Promise<void> {
+    if (!data) throw new Error('Nothing to update')
+    await this.prisma.user.update({
+      where: {
+        id: data.id
+      },
+      data: {
+        name: data.name,
+        last_name: data.last_name
       }
     })
   }

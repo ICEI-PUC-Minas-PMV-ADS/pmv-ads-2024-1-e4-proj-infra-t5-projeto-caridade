@@ -1,4 +1,4 @@
-import { ICreateUserDto } from './app.user.dto';
+import { ICreateUserDto, IUpdateUserDto } from './app.user.dto';
 export declare class AppService {
     private prisma;
     getHello(): string;
@@ -10,4 +10,5 @@ export declare class AppService {
         password: string;
     }>;
     create(data: ICreateUserDto): Promise<void>;
+    update(data: IUpdateUserDto): Promise<void>;
 }
