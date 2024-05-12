@@ -1,15 +1,12 @@
-import { Injectable } from '@nestjs/common';
 import { ICreateUserDto } from './app.user.dto';
-import { PrismaClient } from '@prisma/client';
 import { User } from './app.entitie-user';
+import { Injectable } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
+import { validate } from 'class-validator';
 
 @Injectable()
 export class AppService {
-  private prisma = new PrismaClient()
-
-  getHello(): string {
-    return 'Hello World! User Service';
-  }
+  private prisma = new PrismaClient();
 
   async findByEmail(email: string) {
     const user = await this.prisma.user.findFirst({
@@ -17,26 +14,28 @@ export class AppService {
             email
         }
     })
-
     return user
   }
 
-  async create(data: ICreateUserDto): Promise<void> {
-    if (!data) throw new Error('User is not valid')
-
+  async create(data: ICreateUserDto): Promise<User> {
+    
     const findByEmail = await this.findByEmail(data.email)
-
+    
     if (findByEmail) throw new Error('User already exist')
 
-    const user = new User(data)
+    const errors = await validate(data);
 
-    await this.prisma.user.create({
-      data: {
-        email: user.email,
-        last_name: user.last_name,
-        name: user.name,
-        password: user.password,
-      }
-    })
+    if (errors.length > 0) {
+      throw new Error('Validation failed');
+    } else {
+      return this.prisma.user.create({
+        data: {
+          name: data.name,
+          last_name: data.last_name,
+          email: data.email,
+          password: data.password,
+        },
+      });
+    }
   }
 }

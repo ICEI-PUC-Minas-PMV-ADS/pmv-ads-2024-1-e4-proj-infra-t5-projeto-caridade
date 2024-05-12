@@ -1,7 +1,7 @@
 import { ICreateUserDto } from './app.user.dto';
+import { User } from './app.entitie-user';
 export declare class AppService {
     private prisma;
-    getHello(): string;
     findByEmail(email: string): Promise<{
         id: number;
         email: string;
@@ -9,5 +9,5 @@ export declare class AppService {
         last_name: string;
         password: string;
     }>;
-    create(data: ICreateUserDto): Promise<void>;
+    create(data: ICreateUserDto): Promise<User>;
 }

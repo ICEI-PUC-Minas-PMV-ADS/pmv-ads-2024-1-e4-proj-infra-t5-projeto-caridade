@@ -1,6 +1,5 @@
-import { Body, Controller, Get, HttpCode, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Post, Res, ValidationPipe } from '@nestjs/common';
 import { AppService } from './app.service';
-import { MessagePattern } from '@nestjs/microservices';
 import { ICreateUserDto } from './app.user.dto';
 import { Response } from 'express';
 
@@ -8,15 +7,8 @@ import { Response } from 'express';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  @MessagePattern({ cmd: 'HELLO_USER' })
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
    @Post()
-   async create(@Body() createUserDto: ICreateUserDto, @Res() response: Response) {
-    console.log("teste");
+   async create(@Body(ValidationPipe) createUserDto: ICreateUserDto, @Res() response: Response) {
     try {
       await this.appService.create(createUserDto)
       return response.status(201).send()

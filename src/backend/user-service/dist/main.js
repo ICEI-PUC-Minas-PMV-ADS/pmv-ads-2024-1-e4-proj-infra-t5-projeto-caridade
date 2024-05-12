@@ -5,6 +5,7 @@ const app_module_1 = require("./app.module");
 const microservices_1 = require("@nestjs/microservices");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors();
     app.connectMicroservice({
         transport: microservices_1.Transport.TCP,
         options: {
