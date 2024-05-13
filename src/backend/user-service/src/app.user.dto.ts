@@ -4,3 +4,12 @@ export interface ICreateUserDto {
   email: string
   password: string
 }
+
+export interface IAuthenticateUserDto {
+  email: string
+  password: string
+}
+
+export interface IJwtoken {
+  token: string
+}
