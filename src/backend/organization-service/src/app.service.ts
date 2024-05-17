@@ -32,6 +32,18 @@ export class AppService {
     }
   }
 
+  async getByTheme(themeCode: string) {
+    try {
+      const response = await api.get(
+        `/api/public/projectservice/themes/${themeCode}/projects?api_key=a6d2b676-00e7-47de-9d87-ccec8b424104`,
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching data:', error.data);
+      throw error;
+    }
+  }
+
   async getHello(): Promise<string> {
     try {
       // Make the GET request

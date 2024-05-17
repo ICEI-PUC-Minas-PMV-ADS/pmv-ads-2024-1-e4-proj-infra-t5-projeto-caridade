@@ -29,4 +29,10 @@ export class AppController {
   async getByCountry(@Param() { countryCode }: any) {
     return this.appService.getByCountry(countryCode);
   }
+
+  @Get('/get-by-theme/:themeCode')
+  @MessagePattern({ cmd: 'GET_BY_THEME_ORGANIZATIONS' })
+  async getByTheme(@Param() { themeCode }: any) {
+    return this.appService.getByTheme(themeCode);
+  }
 }
