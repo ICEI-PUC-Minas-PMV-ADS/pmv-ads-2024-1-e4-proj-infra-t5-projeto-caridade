@@ -4,3 +4,9 @@ export interface ICreateUserDto {
   email: string
   password: string
 }
+
+export interface IUpdateUserDto {
+  id: number
+  name: string
+  last_name: string
+}

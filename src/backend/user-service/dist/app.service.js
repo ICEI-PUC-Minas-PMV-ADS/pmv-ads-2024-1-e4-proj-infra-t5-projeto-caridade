@@ -41,6 +41,19 @@ let AppService = class AppService {
             }
         });
     }
+    async update(data) {
+        if (!data)
+            throw new Error('Nothing to update');
+        await this.prisma.user.update({
+            where: {
+                id: data.id
+            },
+            data: {
+                name: data.name,
+                last_name: data.last_name
+            }
+        });
+    }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([
