@@ -1,49 +1,123 @@
-import { Box, Button, Card, TextField, Typography } from "@mui/material";
+import { Box, Button, Card, CircularProgress, TextField, Typography } from "@mui/material";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { UserServices } from "../../services/UserServices/UserServices";
 
 function Register() {
+  const [ req, setReq ] = useState(false)
+  const [ error, setError ] = useState("")
+  const [ name, setName ] = useState("")
+  const [ email, setEmail ] = useState("")
+  const [ lastName, setLastName ] = useState("")
+  const [ password, setPassword ] = useState("")
+  const [ confirmPassword, setConfirmPassword ] = useState("")
+
+  const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (password != confirmPassword) {
+      setError("Senha não estão compatíveis") 
+      return
+    }
+
+    try {
+      setReq(true)
+      await UserServices.create({
+        name,
+        last_name: lastName,
+        email,
+        password
+      })
+      setReq(false)
+      setError('')
+    } catch (error: any) {
+      setError(error.response.data.message) 
+      setReq(false)
+    }
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "left",
-        gap: "500px",
-        padding: "100px",
-      }}
-    >
-      <Card variant="outlined">
-        <Typography variant="h5" component="h5">
-          Cadastrar
-        </Typography>
-        <Typography variant="h6" component="h6">
-          Informações de usuário
-        </Typography>
-        <Box
-          component="form"
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "25ch" },
+    <div style={{ position: "relative" }}>
+      <div       
+        style={{
+          display: "flex",
+          gap: "500px",
+          padding: "100px",
+        }}
+      >
+        <Card 
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            padding: "10px"
           }}
-          noValidate
-          autoComplete="off"
+          variant="outlined"
         >
-          <TextField label="Nome" id="outlined-basic" variant="outlined" />
-          <TextField id="outlined-basic" label="Sobrenome" variant="outlined" />
-          <TextField id="outlined-basic" label="Email" variant="outlined" />
-          <TextField id="outlined-basic" label="Senha" variant="outlined" />
-          <TextField
-            id="outlined-basic"
-            label="Confirmar Senha"
-            variant="outlined"
-          />
-        </Box>
-        <Button sx={{ borderRadius: 40 }} variant="contained">
-          Cadastrar
-        </Button>
-        <Button sx={{ borderRadius: 40 }} variant="contained">
-          Cancelar
-        </Button>
-      </Card>
-      <div>
-        <img src="" alt="teste" />
+          <Typography variant="h5" component="h5">
+            Cadastrar
+          </Typography>
+          <Typography variant="h6" component="h6">
+            Informações de usuário
+          </Typography>
+          <Typography style={{ color: "red" }} component="span">
+            {error && error}
+          </Typography>
+          <Box
+            component="form"
+            onSubmit={createUser}
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "25ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <TextField 
+              label="Nome" 
+              id="outlined-basic" 
+              variant="outlined" 
+              onChange={e => setName(e.target.value)}
+            />
+            <TextField 
+              id="outlined-basic" 
+              label="Sobrenome" 
+              variant="outlined" 
+              onChange={e => setLastName(e.target.value)}
+            />
+            <TextField 
+              id="outlined-basic" 
+              label="Email" 
+              variant="outlined" 
+              onChange={e => setEmail(e.target.value)}
+            />
+            <TextField 
+              id="outlined-basic" 
+              label="Senha" 
+              variant="outlined" 
+              onChange={e => setPassword(e.target.value)}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Confirmar Senha"
+              variant="outlined"
+              onChange={e => setConfirmPassword(e.target.value)}
+            />
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <Link to={"/login"}>Já possui conta? Login</Link>
+              {req ?
+              <Button  disabled variant="contained">
+                <CircularProgress />
+              </Button>
+              :
+              <Button type="submit" variant="contained">
+                Cadastrar
+              </Button>
+              }
+            </div>
+          </Box>
+        </Card>
+        <div>
+          <img src="" alt="teste" />
+        </div>
       </div>
     </div>
   );

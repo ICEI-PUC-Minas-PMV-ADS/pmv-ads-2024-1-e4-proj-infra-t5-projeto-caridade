@@ -4,6 +4,7 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
 
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.TCP,
@@ -12,7 +13,7 @@ async function bootstrap() {
       port: 4200,
     },
   });
-
+  
   await app.startAllMicroservices();
   await app.listen(4200);
   console.log(`UserService is running on`, await app.getUrl());

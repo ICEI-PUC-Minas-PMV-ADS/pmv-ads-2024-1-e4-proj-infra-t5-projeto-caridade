@@ -1,15 +1,17 @@
-import { Injectable } from '@nestjs/common';
-import { ICreateUserDto, IUpdateUserDto } from './app.user.dto';
-import { PrismaClient } from '@prisma/client';
+import { IAuthenticateUserDto, ICreateUserDto, IJwtoken } from './app.user.dto';
 import { User } from './app.entitie-user';
+import { Injectable } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt'
+import { IJwtokenProvider } from './providers/IJwtokenProvider';
 
 @Injectable()
 export class AppService {
-  private prisma = new PrismaClient()
+  constructor(
+    private jwtokenProvider: IJwtokenProvider
+  ) {}
 
-  getHello(): string {
-    return 'Hello World! User Service';
-  }
+  private prisma = new PrismaClient();
 
   async findByEmail(email: string) {
     const user = await this.prisma.user.findFirst({
@@ -17,39 +19,51 @@ export class AppService {
             email
         }
     })
-
     return user
   }
 
   async create(data: ICreateUserDto): Promise<void> {
-    if (!data) throw new Error('User is not valid')
 
-    const findByEmail = await this.findByEmail(data.email)
+    const userAlreadyExist = await this.findByEmail(data.email)
 
-    if (findByEmail) throw new Error('User already exist')
+    if (userAlreadyExist) throw new Error('User already exist.')
+        
+    const {email, name, last_name, password } = data
 
-    const user = new User(data)
+    const passwordCrypt = await bcrypt.hash(password, 10)
 
+    const user = new User({
+        email,
+        name,
+        last_name,
+        password: passwordCrypt
+    })
+    
     await this.prisma.user.create({
       data: {
-        email: user.email,
-        last_name: user.last_name,
         name: user.name,
+        last_name: user.last_name,
+        email: user.email,
         password: user.password,
-      }
-    })
+      },
+    });
   }
 
-  async update(data: IUpdateUserDto): Promise<void> {
-    if (!data) throw new Error('Nothing to update')
-    await this.prisma.user.update({
-      where: {
-        id: data.id
-      },
-      data: {
-        name: data.name,
-        last_name: data.last_name
-      }
-    })
+  
+  async authenticate(data: IAuthenticateUserDto): Promise<IJwtoken> {
+    
+    if(!data) throw new Error("Invalid fields")
+
+    const findUser = await this.findByEmail(data.email)
+
+    if (!findUser) throw new Error("User cannot be find")
+    
+    const isMatch = await bcrypt.compare(data.password, findUser.password)
+    
+    if (!isMatch) throw new Error("invalid password")
+
+    const token = this.jwtokenProvider.createToken(findUser.id!)
+    
+    return token
   }
 }
