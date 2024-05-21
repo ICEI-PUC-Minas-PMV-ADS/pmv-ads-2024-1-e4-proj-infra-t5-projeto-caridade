@@ -9,13 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppService = void 0;
 const common_1 = require("@nestjs/common");
 const client_1 = require("@prisma/client");
-const app_entitie_user_1 = require("./app.entitie-user");
+const class_validator_1 = require("class-validator");
 let AppService = class AppService {
     constructor() {
         this.prisma = new client_1.PrismaClient();
-    }
-    getHello() {
-        return 'Hello World! User Service';
     }
     async findByEmail(email) {
         const user = await this.prisma.user.findFirst({
@@ -26,20 +23,23 @@ let AppService = class AppService {
         return user;
     }
     async create(data) {
-        if (!data)
-            throw new Error('User is not valid');
         const findByEmail = await this.findByEmail(data.email);
         if (findByEmail)
             throw new Error('User already exist');
-        const user = new app_entitie_user_1.User(data);
-        await this.prisma.user.create({
-            data: {
-                email: user.email,
-                last_name: user.last_name,
-                name: user.name,
-                password: user.password,
-            }
-        });
+        const errors = await (0, class_validator_1.validate)(data);
+        if (errors.length > 0) {
+            throw new Error('Validation failed');
+        }
+        else {
+            return this.prisma.user.create({
+                data: {
+                    name: data.name,
+                    last_name: data.last_name,
+                    email: data.email,
+                    password: data.password,
+                },
+            });
+        }
     }
     async update(data) {
         if (!data)
