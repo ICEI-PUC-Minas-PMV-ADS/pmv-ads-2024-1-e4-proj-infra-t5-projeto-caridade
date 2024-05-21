@@ -40,7 +40,12 @@ Tela Organização
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/9ecbaa4d-788d-4e6f-ab9c-91ef78085723)
 
 Quem Somos
-![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/b66f7745-2b23-4b99-a1be-ce60815aeb79)
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/108704270/b66f7745-2b23-4b99-a1be-ce60815aeb79)  
+
+Perfil
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e4-proj-infra-t5-projeto-caridade/assets/114882542/71a814a8-23f5-49e2-b71f-7a93a30d8873)
+
 
 ## Aplicação Mobile
 
