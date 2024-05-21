@@ -17,7 +17,8 @@ export class JwtokenProvider implements IJwtokenProvider {
     }
 
     verifyToken(token: string): JwtPayload & { id: number } {
-        const verify = jwt.verify(token , "mysecret")
+        const secret = process.env.MY_SECRET
+        const verify = jwt.verify(token , secret)
         
         return verify as JwtPayload & { id: number }
     }
