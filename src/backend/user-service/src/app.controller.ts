@@ -19,11 +19,11 @@ export class AppController {
   }
   }
 
-  @Post('/signup')
+  @Post('/signin')
   async authenticate(@Body() authenticateUserDto: IAuthenticateUserDto, @Res() response: Response) {
   try {
-    await this.appService.authenticate(authenticateUserDto)
-    return response.status(201).send()
+    const token = await this.appService.authenticate(authenticateUserDto)
+    return response.status(201).send(token)
   } catch (error: any) {
     return response.status(400).json({
       message: error.message || 'Unexpected error.'
