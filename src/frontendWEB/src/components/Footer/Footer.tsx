@@ -9,6 +9,7 @@ function Footer() {
       gap={4}
       p={2}
       borderTop="solid 1px"
+      // position=""
     >
       <Link to="/institutional">
         <p>Quem somos?</p>
