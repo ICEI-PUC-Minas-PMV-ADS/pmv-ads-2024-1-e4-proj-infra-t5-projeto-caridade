@@ -1,38 +1,33 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { OrganizationCard, SearchBar } from "../../components";
-import charityImage from "../../assets/charity.jpeg";
 import { Grid } from "@mui/material";
 
-const ORGANIZATIONS_MOCK = [
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-  { title: "projeto 1", image: charityImage },
-];
 function Search() {
+  const [organizations, setOrganizations] = useState([]);
 
-  const renderOrganizations = useMemo(() => {
-    return ORGANIZATIONS_MOCK.map(({ title, image }) => (
-      <Grid item xs={3}>
-        <OrganizationCard title={title} image={image} />
-      </Grid>
-    ));
+  async function getAllOrganizations() {
+    try {
+      const response = await axios("http://[::1]:4400/get-all");
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getAllOrganizations().then((response) => setOrganizations(response?.data));
   }, []);
-
 
   return (
     <div>
       <SearchBar />
       <Grid container spacing={2} mt={2}>
-        {renderOrganizations}
+        {organizations.map(({ name, logoUrl, id }) => (
+          <Grid item xs={3}>
+            <OrganizationCard title={name} image={logoUrl} id={id} />
+          </Grid>
+        ))}
       </Grid>
     </div>
   );

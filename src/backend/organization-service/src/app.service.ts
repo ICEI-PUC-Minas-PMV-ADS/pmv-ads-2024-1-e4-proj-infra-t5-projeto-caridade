@@ -5,7 +5,7 @@ import { organizations } from './organizations-cache';
 @Injectable()
 export class AppService {
   getAll() {
-    return organizations;
+    return organizations.slice(0, 10);
   }
 
   async getById(id: string) {
