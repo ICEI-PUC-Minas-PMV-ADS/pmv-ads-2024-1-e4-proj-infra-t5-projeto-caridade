@@ -50,7 +50,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/organization/:postId",
+    path: "/organization/",
     element: (
       <Layout>
         <Organization />
