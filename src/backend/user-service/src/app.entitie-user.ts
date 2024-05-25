@@ -4,7 +4,7 @@ export class User {
   public email: string 
   public name: string
   public last_name: string
-  public password: string 
+  public password?: string 
 
   constructor(props: Omit<User, 'id'>) {
     this.email = props.email

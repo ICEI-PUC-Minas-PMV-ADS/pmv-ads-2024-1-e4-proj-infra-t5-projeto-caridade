@@ -1,4 +1,4 @@
-import { IAuthenticateUserDto, ICreateUserDto, IJwtoken } from './app.user.dto';
+import { IAuthenticateUserDto, ICreateUserDto, IJwtoken, IUpdateUser } from './app.user.dto';
 import { User } from './app.entitie-user';
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
@@ -65,5 +65,54 @@ export class AppService {
     const token = this.jwtokenProvider.createToken(findUser.id!)
     
     return token
+  }
+
+  async authUser(token: string): Promise<User> {
+    if (!token) throw new Error("Invalid token")
+
+    const verifyToken = this.jwtokenProvider.verifyToken(token)
+
+    if (!verifyToken.id) throw new Error("Invalid user")
+
+    const user = await this.getById(verifyToken.id);
+
+    return user
+  }
+
+  async getById(id: number): Promise<User> {
+    return await this.prisma.user.findFirst({
+      where: {
+        id,
+      }
+    })
+  }
+
+  async delete(token: string): Promise<void> {
+    const loggedUser = await this.authUser(token)
+
+    if(!loggedUser) throw new Error('Invalid user')
+
+    await this.prisma.user.delete({
+      where: {
+        id: loggedUser.id,
+      }
+    })
+  }
+
+  async update(data: IUpdateUser): Promise<User> {
+    const loggedUser = await this.authUser(data.token)
+
+    if(!loggedUser) throw new Error('Invalid user')
+
+    return await this.prisma.user.update({
+      where: {
+        id: loggedUser.id
+      },
+      data: {
+        last_name: data.user.last_name,
+        name: data.user.name,
+        password: data.user.password ? data.user.password : loggedUser.password,
+      }
+    })
   }
 }

@@ -1,3 +1,5 @@
+import { User } from "./app.entitie-user"
+
 export interface ICreateUserDto {
   name: string
   last_name: string
@@ -12,4 +14,14 @@ export interface IAuthenticateUserDto {
 
 export interface IJwtoken {
   token: string
+}
+
+
+export interface IUpdateUser {
+  token: string
+  user: {
+    name: string
+    last_name: string
+    password?: string
+  }
 }
