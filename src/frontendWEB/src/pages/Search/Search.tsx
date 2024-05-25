@@ -37,7 +37,7 @@ function Search() {
             <Card sx={{ maxWidth: 345, margin: 1, boxShadow: 5 }}>
               <CardMedia
                 component="img"
-                height="200px" // Adjust the height as needed to fill the top part of the card
+                height="200px"
                 image={logoUrl}
                 alt={name}
                 sx={{
