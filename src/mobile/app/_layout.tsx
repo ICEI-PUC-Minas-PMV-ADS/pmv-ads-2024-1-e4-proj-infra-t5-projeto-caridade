@@ -13,6 +13,11 @@ import { ErrorBoundary } from "react-error-boundary";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { FallbackComponent } from "@/components";
 
+import "@/libs/unistyles";
+import { useInitialTheme } from "react-native-unistyles";
+
+// const userTheme = TODO: Get default theme based on user preferences
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -28,18 +33,20 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
+  useInitialTheme("light");
+
   if (!loaded) {
     return null;
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <ErrorBoundary FallbackComponent={FallbackComponent}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ErrorBoundary>
-    </ThemeProvider>
+    // <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <ErrorBoundary FallbackComponent={FallbackComponent}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </ErrorBoundary>
+    // </ThemeProvider>
   );
 }
