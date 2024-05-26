@@ -20,7 +20,6 @@ let AppController = class AppController {
         this.appService = appService;
     }
     async create(createUserDto, response) {
-        console.log("teste");
         try {
             await this.appService.create(createUserDto);
             return response.status(201).send();
@@ -31,10 +30,12 @@ let AppController = class AppController {
             });
         }
     }
-    async update(updateUserDto, response) {
+    async authenticate(authenticateUserDto, response) {
+        console.log('cheguei antes do try');
         try {
-            await this.appService.update(updateUserDto);
-            return response.status(201).send();
+            console.log('cheguei aqui');
+            const token = await this.appService.authenticate(authenticateUserDto);
+            return response.status(201).send(token);
         }
         catch (error) {
             return response.status(400).json({
@@ -46,20 +47,20 @@ let AppController = class AppController {
 exports.AppController = AppController;
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)(common_1.ValidationPipe)),
+    __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "create", null);
 __decorate([
-    (0, common_1.Put)(),
+    (0, common_1.Post)('/signin'),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "update", null);
+], AppController.prototype, "authenticate", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)('user'),
     __metadata("design:paramtypes", [app_service_1.AppService])
