@@ -1,6 +1,6 @@
 import { IAuthenticateUserDto, ICreateUserDto, IJwtoken, IUpdateUser } from './app.user.dto';
 import { User } from './app.entitie-user';
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt'
 import { IJwtokenProvider } from './providers/IJwtokenProvider';
