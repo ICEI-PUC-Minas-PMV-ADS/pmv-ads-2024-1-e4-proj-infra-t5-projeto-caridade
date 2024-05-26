@@ -1,5 +1,6 @@
 import { Box, Button, Card, CircularProgress, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import charityImage2 from "../../assets/charity2.jpg";
 import { Link } from "react-router-dom";
 import { UserServices } from "../../services/UserServices/UserServices";
 
@@ -41,13 +42,14 @@ function Register() {
       <div       
         style={{
           display: "flex",
-          gap: "500px",
-          padding: "100px",
+          gap: "40px",
+          padding: "20px",
         }}
       >
         <Card 
           style={{
             display: "flex",
+            width: "400px",
             flexDirection: "column",
             padding: "10px"
           }}
@@ -116,7 +118,12 @@ function Register() {
           </Box>
         </Card>
         <div>
-          <img src="" alt="teste" />
+        <img
+            width="160%"
+            src={charityImage2}
+            alt="Charity Hands"
+            style={{ borderRadius: "10px" }}
+            />
         </div>
       </div>
     </div>
