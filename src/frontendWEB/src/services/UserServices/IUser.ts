@@ -4,3 +4,12 @@ export interface ICreateUser {
   last_name: string
   password: string
 }
+
+export interface IUserLogin {
+  email: string
+  password: string
+}
+
+export interface IJwtoken {
+  token: string
+}
