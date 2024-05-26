@@ -1,8 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Header() {
+interface IProps {
+  openEditProfile(): void
+} 
+
+function Header(props: IProps) {
+  const [isUserLogged, SetIsUserLogged] = useState(true)
+
   return (
     <Box
       display="flex"
@@ -16,9 +24,20 @@ function Header() {
         </Typography>
       </Link>
       <Box display="flex" flexDirection="row" alignItems="center" gap={4}>
-        <Link to="/login">
-          <Button variant="contained">Login</Button>
-        </Link>
+        {isUserLogged ? 
+          <Button
+            sx={{ borderRadius: 30 }}
+            variant="contained"
+            style={{ padding: "10px", display: "flex", gap: 5 }}
+            onClick={() => props.openEditProfile()}
+          >
+            <FaUserAlt /> name
+          </Button>
+          :
+          <Link to="/login">
+            <Button variant="contained">Login</Button>
+          </Link>
+        }
         <Link to="/search">
           <BsSearch />
         </Link>

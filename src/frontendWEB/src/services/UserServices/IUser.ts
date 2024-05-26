@@ -4,3 +4,7 @@ export interface ICreateUser {
   last_name: string
   password: string
 }
+
+export interface IUpdateUser {
+  name: string
+}

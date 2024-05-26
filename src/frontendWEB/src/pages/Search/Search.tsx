@@ -18,6 +18,7 @@ const ORGANIZATIONS_MOCK = [
   { title: "projeto 1", image: charityImage },
 ];
 function Search() {
+
   const renderOrganizations = useMemo(() => {
     return ORGANIZATIONS_MOCK.map(({ title, image }) => (
       <Grid item xs={3}>
@@ -25,6 +26,7 @@ function Search() {
       </Grid>
     ));
   }, []);
+
 
   return (
     <div>
