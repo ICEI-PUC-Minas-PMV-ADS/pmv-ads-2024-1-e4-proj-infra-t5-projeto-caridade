@@ -1,9 +1,9 @@
-import { IAuthenticateUserDto, ICreateUserDto, IJwtoken, IUpdateUser } from './app.user.dto';
+import { IAuthenticateUserDto, ICreateUserDto, IUpdateUser } from './app.user.dto';
 import { User } from './app.entitie-user';
-import { IJwtokenProvider } from './providers/IJwtokenProvider';
+import { JwtService } from '@nestjs/jwt';
 export declare class AppService {
     private jwtokenProvider;
-    constructor(jwtokenProvider: IJwtokenProvider);
+    constructor(jwtokenProvider: JwtService);
     private prisma;
     findByEmail(email: string): Promise<{
         id: number;
@@ -13,7 +13,7 @@ export declare class AppService {
         password: string;
     }>;
     create(data: ICreateUserDto): Promise<void>;
-    authenticate(data: IAuthenticateUserDto): Promise<IJwtoken>;
+    authenticate(data: IAuthenticateUserDto): Promise<String>;
     authUser(token: string): Promise<User>;
     getById(id: number): Promise<User>;
     delete(token: string): Promise<void>;

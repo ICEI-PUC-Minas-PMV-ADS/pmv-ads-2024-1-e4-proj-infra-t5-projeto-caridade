@@ -9,7 +9,7 @@ interface IProps {
 } 
 
 function Header(props: IProps) {
-  const [isUserLogged, SetIsUserLogged] = useState(true)
+  const [isUserLogged, SetIsUserLogged] = useState(false)
 
   return (
     <Box
