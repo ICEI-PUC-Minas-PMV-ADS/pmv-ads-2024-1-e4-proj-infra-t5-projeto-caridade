@@ -4,8 +4,10 @@ export interface ICreateUserDto {
     email: string;
     password: string;
 }
-export interface IUpdateUserDto {
-    id: number;
-    name: string;
-    last_name: string;
+export interface IAuthenticateUserDto {
+    email: string;
+    password: string;
+}
+export interface IJwtoken {
+    token: string;
 }
