@@ -54,9 +54,11 @@ let AppController = class AppController {
         }
     }
     async update(token, user, response) {
+        console.log('cheguei antes do try');
         try {
-            await this.appService.update({ user, token });
-            return response.status(201).send();
+            console.log('cheguei aqui');
+            const token = await this.appService.authenticate(authenticateUserDto);
+            return response.status(201).send(token);
         }
         catch (error) {
             return response.status(400).json({
@@ -75,7 +77,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "create", null);
 __decorate([
-    (0, common_1.Post)('/signup'),
+    (0, common_1.Post)('/signin'),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),

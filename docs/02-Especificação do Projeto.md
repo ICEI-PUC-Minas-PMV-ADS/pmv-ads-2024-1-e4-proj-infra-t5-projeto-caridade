@@ -74,14 +74,19 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O usuário pode se cadastrar, fazer login no sistema, e editar informações | ALTA | 
-|RF-002| O usuário pode pesquisar por organizações/projetos sociais de acordo com critérios estabelecidos  | ALTA |
-|RF-003| O usuário pode favoritar organizações/projetos sociais | ALTA |
-|RF-004| Usuário terá acesso às organizações favoritadas em sua página inicial de perfil | ALTA |
-|RF-005| O usuário pode clicar em cards com “imagem da organização” favoritada para acessar informações e a página da organização  | ALTA |
-|RF-006| Usuário pode registrar a quantidade doada para determinada instituição  | BAIXA |
-|RF-007| Usuário verá uma “barra de progresso” indicando o valor doado para cada instituição favoritada por ele  | BAIXA |
-|RF-008| Usuário pode acrescentar “comentários” na página da instituição favoritada  | MÉDIA |
+|RF-001| O usuário pode se cadastrar e editar informações | ALTA | 
+|RF-002| O usuário pode fazer login no sistema | ALTA | 
+|RF-003| O usuário pode pesquisar por organizações | ALTA |
+|RF-004| O usuário pode filtrar projetos sociais de acordo com critérios estabelecidos (país e tema)  | ALTA |
+|RF-005| O usuário pode favoritar organizações/projetos sociais | ALTA |
+|RF-006| Usuário terá acesso às organizações favoritadas em sua página inicial de perfil | ALTA |
+|RF-007| O usuário pode clicar em cards com “imagem da organização” favoritada para acessar informações e a página da organização  | ALTA |
+|RF-008| Usuário pode acrescentar “comentários” na página da instituição favoritada  | BAIXA |
+|RF-009| Usuário verá uma “barra de progresso” indicando o valor doado para cada instituição favoritada por ele  | BAIXA |
+|RF-010| Usuário pode registrar a quantidade doada para determinada instituição  | BAIXA |
+|RF-011| Usuário pode ocultar projetos que não deseja ver | BAIXA |
+|RF-012| Usuário pode enviar mensagens para outros usuários  | BAIXA |
+
 
 
 ### Requisitos não Funcionais

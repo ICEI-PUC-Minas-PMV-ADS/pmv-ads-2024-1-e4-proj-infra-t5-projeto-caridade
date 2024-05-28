@@ -3,6 +3,6 @@ export declare class User {
     email: string;
     name: string;
     last_name: string;
-    password?: string;
+    password: string;
     constructor(props: Omit<User, 'id'>);
 }
