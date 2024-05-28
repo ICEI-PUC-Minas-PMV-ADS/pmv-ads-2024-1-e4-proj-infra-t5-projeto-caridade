@@ -41,6 +41,7 @@ export class AppController {
         message: error.message || 'Unexpected error.'
       })
     }
+
   }
 
   @Put()

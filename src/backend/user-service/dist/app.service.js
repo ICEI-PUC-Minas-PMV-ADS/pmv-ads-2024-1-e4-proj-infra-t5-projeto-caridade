@@ -14,6 +14,7 @@ const app_entitie_user_1 = require("./app.entitie-user");
 const common_1 = require("@nestjs/common");
 const client_1 = require("@prisma/client");
 const bcrypt_1 = require("bcrypt");
+const jwt_1 = require("@nestjs/jwt");
 let AppService = class AppService {
     constructor(jwtokenProvider) {
         this.jwtokenProvider = jwtokenProvider;
@@ -57,13 +58,54 @@ let AppService = class AppService {
         const isMatch = await bcrypt_1.default.compare(data.password, findUser.password);
         if (!isMatch)
             throw new Error("invalid password");
-        const token = this.jwtokenProvider.createToken(findUser.id);
+        const token = await this.jwtokenProvider.signAsync({ id: findUser.id });
         return token;
+    }
+    async authUser(token) {
+        if (!token)
+            throw new Error("Invalid token");
+        const verifyToken = this.jwtokenProvider.verify(token);
+        if (!verifyToken.id)
+            throw new Error("Invalid user");
+        const user = await this.getById(verifyToken.id);
+        return user;
+    }
+    async getById(id) {
+        return await this.prisma.user.findFirst({
+            where: {
+                id,
+            }
+        });
+    }
+    async delete(token) {
+        const loggedUser = await this.authUser(token);
+        if (!loggedUser)
+            throw new Error('Invalid user');
+        await this.prisma.user.delete({
+            where: {
+                id: loggedUser.id,
+            }
+        });
+    }
+    async update(data) {
+        const loggedUser = await this.authUser(data.token);
+        if (!loggedUser)
+            throw new Error('Invalid user');
+        return await this.prisma.user.update({
+            where: {
+                id: loggedUser.id
+            },
+            data: {
+                last_name: data.user.last_name,
+                name: data.user.name,
+                password: data.user.password ? data.user.password : loggedUser.password,
+            }
+        });
     }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [Object])
+    __metadata("design:paramtypes", [jwt_1.JwtService])
 ], AppService);
 //# sourceMappingURL=app.service.js.map

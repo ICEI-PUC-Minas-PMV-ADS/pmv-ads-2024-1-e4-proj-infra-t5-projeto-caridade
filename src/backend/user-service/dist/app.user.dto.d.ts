@@ -11,3 +11,11 @@ export interface IAuthenticateUserDto {
 export interface IJwtoken {
     token: string;
 }
+export interface IUpdateUser {
+    token: string;
+    user: {
+        name: string;
+        last_name: string;
+        password?: string;
+    };
+}
