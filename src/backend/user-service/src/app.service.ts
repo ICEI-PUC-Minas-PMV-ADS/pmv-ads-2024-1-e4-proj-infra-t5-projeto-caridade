@@ -3,12 +3,12 @@ import { User } from './app.entitie-user';
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt'
-import { IJwtokenProvider } from './providers/IJwtokenProvider';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AppService {
   constructor(
-    private jwtokenProvider: IJwtokenProvider
+    private jwtokenProvider: JwtService
   ) {}
 
   private prisma = new PrismaClient();
@@ -50,7 +50,7 @@ export class AppService {
   }
 
   
-  async authenticate(data: IAuthenticateUserDto): Promise<IJwtoken> {
+  async authenticate(data: IAuthenticateUserDto): Promise<String> {
     
     if(!data) throw new Error("Invalid fields")
 
@@ -62,7 +62,7 @@ export class AppService {
     
     if (!isMatch) throw new Error("invalid password")
 
-    const token = this.jwtokenProvider.createToken(findUser.id!)
+    const token = await this.jwtokenProvider.signAsync({id: findUser.id!})
     
     return token
   }
@@ -70,7 +70,7 @@ export class AppService {
   async authUser(token: string): Promise<User> {
     if (!token) throw new Error("Invalid token")
 
-    const verifyToken = this.jwtokenProvider.verifyToken(token)
+    const verifyToken = this.jwtokenProvider.verify(token)
 
     if (!verifyToken.id) throw new Error("Invalid user")
 
