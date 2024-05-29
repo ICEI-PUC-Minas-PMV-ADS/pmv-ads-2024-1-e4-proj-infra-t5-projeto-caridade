@@ -2,7 +2,7 @@ import { IAuthenticateUserDto, ICreateUserDto, IJwtoken, IUpdateUser } from './a
 import { User } from './app.entitie-user';
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import bcrypt from 'bcrypt'
+const bcrypt = require('bcrypt');
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
@@ -52,6 +52,7 @@ export class AppService {
   
   async authenticate(data: IAuthenticateUserDto): Promise<String> {
     
+
     if(!data) throw new Error("Invalid fields")
 
     const findUser = await this.findByEmail(data.email)
@@ -68,9 +69,10 @@ export class AppService {
   }
 
   async authUser(token: string): Promise<User> {
-    if (!token) throw new Error("Invalid token")
+    const bearerToken = token.split(' ')[1]
+    if (!bearerToken) throw new Error("Invalid token")
 
-    const verifyToken = this.jwtokenProvider.verify(token)
+    const verifyToken = this.jwtokenProvider.verify(bearerToken)
 
     if (!verifyToken.id) throw new Error("Invalid user")
 
@@ -83,6 +85,13 @@ export class AppService {
     return await this.prisma.user.findFirst({
       where: {
         id,
+      },
+      select: {
+        email: true,
+        id: true,
+        last_name: true,
+        name: true,
+        password: false,
       }
     })
   }

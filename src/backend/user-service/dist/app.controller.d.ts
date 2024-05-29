@@ -7,6 +7,7 @@ export declare class AppController {
     constructor(appService: AppService);
     create(createUserDto: ICreateUserDto, response: Response): Promise<Response<any, Record<string, any>>>;
     authenticate(authenticateUserDto: IAuthenticateUserDto, response: Response): Promise<Response<any, Record<string, any>>>;
+    authUser(token: string, response: Response): Promise<Response<any, Record<string, any>>>;
     delete(token: string, response: Response): Promise<Response<any, Record<string, any>>>;
     update(token: string, user: User, response: Response): Promise<Response<any, Record<string, any>>>;
 }

@@ -9,6 +9,7 @@ export class User {
   constructor(props: Omit<User, 'id'>) {
     this.email = props.email
     this.name = props.name
+    this.last_name = props.last_name
     this.password = props.password
   }
 }
