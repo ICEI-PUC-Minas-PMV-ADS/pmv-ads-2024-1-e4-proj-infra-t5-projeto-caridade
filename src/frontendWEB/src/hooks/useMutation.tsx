@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 
-export function useFetch({ url, params }: { url: string; params?: any }) {
+export function useMutation({ url, params }) {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const mutate = async () => {
       setIsPending(true);
-      const response = await api.get(url, params);
+      const response = await api.post(url, params);
       setIsPending(false);
-      setData(response?.data);
+      setData(response);
     };
-    fetchData();
+    mutate();
   }, [url]);
 
   return { data, isPending };
