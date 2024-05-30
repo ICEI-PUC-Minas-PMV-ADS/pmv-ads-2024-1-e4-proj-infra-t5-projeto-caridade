@@ -13,7 +13,7 @@ exports.AppService = void 0;
 const app_entitie_user_1 = require("./app.entitie-user");
 const common_1 = require("@nestjs/common");
 const client_1 = require("@prisma/client");
-const bcrypt_1 = require("bcrypt");
+const bcrypt = require('bcrypt');
 const jwt_1 = require("@nestjs/jwt");
 let AppService = class AppService {
     constructor(jwtokenProvider) {
@@ -33,7 +33,7 @@ let AppService = class AppService {
         if (userAlreadyExist)
             throw new Error('User already exist.');
         const { email, name, last_name, password } = data;
-        const passwordCrypt = await bcrypt_1.default.hash(password, 10);
+        const passwordCrypt = await bcrypt.hash(password, 10);
         const user = new app_entitie_user_1.User({
             email,
             name,
@@ -55,16 +55,17 @@ let AppService = class AppService {
         const findUser = await this.findByEmail(data.email);
         if (!findUser)
             throw new Error("User cannot be find");
-        const isMatch = await bcrypt_1.default.compare(data.password, findUser.password);
+        const isMatch = await bcrypt.compare(data.password, findUser.password);
         if (!isMatch)
             throw new Error("invalid password");
         const token = await this.jwtokenProvider.signAsync({ id: findUser.id });
         return token;
     }
     async authUser(token) {
-        if (!token)
+        const bearerToken = token.split(' ')[1];
+        if (!bearerToken)
             throw new Error("Invalid token");
-        const verifyToken = this.jwtokenProvider.verify(token);
+        const verifyToken = this.jwtokenProvider.verify(bearerToken);
         if (!verifyToken.id)
             throw new Error("Invalid user");
         const user = await this.getById(verifyToken.id);
@@ -74,6 +75,13 @@ let AppService = class AppService {
         return await this.prisma.user.findFirst({
             where: {
                 id,
+            },
+            select: {
+                email: true,
+                id: true,
+                last_name: true,
+                name: true,
+                password: false,
             }
         });
     }

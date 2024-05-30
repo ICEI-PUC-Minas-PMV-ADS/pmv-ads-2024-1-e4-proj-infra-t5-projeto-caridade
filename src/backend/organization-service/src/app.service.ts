@@ -5,7 +5,7 @@ import { organizations } from './organizations-cache';
 @Injectable()
 export class AppService {
   getAll() {
-    return organizations;
+    return organizations.slice(0, 10);
   }
 
   async getById(id: string) {
@@ -42,6 +42,37 @@ export class AppService {
       console.error('Error fetching data:', error.data);
       throw error;
     }
+  }
+
+  async getByParam({
+    name,
+    theme,
+    country,
+  }: {
+    name?: string;
+    theme?: string;
+    country?: string;
+  }) {
+    let filteredOrganizations = organizations;
+
+    if (name)
+      filteredOrganizations = filteredOrganizations.filter(({ name: name_ }) =>
+        name_.toLowerCase().includes(name),
+      );
+
+    if (theme)
+      filteredOrganizations = filteredOrganizations.filter(({ themes }) => {
+        if (!themes) return false;
+        return themes.filter(({ name }) => name.toLowerCase().includes(theme))
+          .length;
+      });
+
+    if (country)
+      filteredOrganizations = filteredOrganizations.filter(
+        ({ country: country_ }) => country_.toLowerCase().includes(country),
+      );
+
+    return filteredOrganizations;
   }
 
   async getHello(): Promise<string> {
