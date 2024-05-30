@@ -1,35 +1,51 @@
-import { Box, Button, Typography } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
-import projeto1Image from "../../assets/projeto1.jpeg";
+import { Box, Typography } from "@mui/material";
+import { useQueryParams } from "../../hooks";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Organization() {
-  const { postId } = useParams();
+  const params = useQueryParams();
+  const organizationId = params.get("organization_id");
+
+  const [organization, setOrganization] = useState<any>();
+
+  async function getAllOrganizations() {
+    try {
+      const response = await axios(
+        `http://[::1]:4400/get-by-id/${organizationId}`
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getAllOrganizations().then((response) =>
+      setOrganization(response?.data.organization)
+    );
+  }, []);
+
+  if (!organization) return <>loading...</>;
 
   return (
     <Box display="flex">
       <Box alignItems="center" display="flex" height="100%" gap={5}>
         <div>
           <Typography variant="h3" color="#004e63">
-            Projeto 1
+            {organization.name}
           </Typography>
           <Box>
             <img
               width="400px"
-              src={projeto1Image}
+              src={organization.logoUrl}
               alt="Projeto1"
               style={{ borderRadius: "10px" }}
             />
           </Box>
         </div>
         <Typography variant="h6" mt={2} align="justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi pariatur.
+          {organization.mission}
         </Typography>
       </Box>
     </Box>
