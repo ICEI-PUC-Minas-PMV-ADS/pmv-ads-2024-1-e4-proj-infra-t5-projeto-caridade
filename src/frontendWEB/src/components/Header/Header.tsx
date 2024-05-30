@@ -1,15 +1,20 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useUserContext } from "../../context/userContext";
 
 interface IProps {
   openEditProfile(): void
 } 
 
 function Header(props: IProps) {
-  const [isUserLogged, SetIsUserLogged] = useState(false)
+  const { isUserLogged, loggedUser } = useUserContext()
+
+  useEffect(() => {
+    loggedUser()
+  },[])
 
   return (
     <Box
