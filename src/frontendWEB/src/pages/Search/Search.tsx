@@ -9,8 +9,8 @@ import {
   CardActions,
   Button,
   Typography,
-  Box,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Search() {
   const [organizations, setOrganizations] = useState([]);
@@ -53,9 +53,11 @@ function Search() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" size="small">
-                  Learn More
-                </Button>
+                <Link to={`/organization?organization_id=${id}`}>
+                  <Button variant="outlined" size="small">
+                    Learn More
+                  </Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>

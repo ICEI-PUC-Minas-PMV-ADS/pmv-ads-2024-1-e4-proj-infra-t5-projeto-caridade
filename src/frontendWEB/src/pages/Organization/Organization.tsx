@@ -1,17 +1,19 @@
 import { Box, Typography } from "@mui/material";
 import { useQueryParams } from "../../hooks";
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import axios from "axios";
 
 function Organization() {
   const params = useQueryParams();
   const organizationId = params.get("organization_id");
 
-  const [organization, setOrganization] = useState();
+  const [organization, setOrganization] = useState<any>();
 
   async function getAllOrganizations() {
     try {
-      const response = await api(`/get-by-id/${organizationId}`);
+      const response = await axios(
+        `http://[::1]:4400/get-by-id/${organizationId}`
+      );
       return response;
     } catch (error) {
       console.log(error);
