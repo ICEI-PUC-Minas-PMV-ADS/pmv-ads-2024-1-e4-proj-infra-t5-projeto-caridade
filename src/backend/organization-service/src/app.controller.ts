@@ -24,6 +24,23 @@ export class AppController {
     return this.appService.getById(id);
   }
 
+  'localhost?name=sdasdas&id=123&theme=asdas';
+  'localhost/nome/tema/país';
+
+  @Get('/get-by-params')
+  @MessagePattern({ cmd: 'GET_BY_PARAMS' })
+  async getByParams(
+    @Query('country') country?: string,
+    @Query('theme') theme?: string,
+    @Query('name') name?: string,
+  ) {
+    return this.appService.getByParam({
+      name: name?.toLowerCase(),
+      theme: theme?.toLowerCase(),
+      country: country?.toLowerCase(),
+    });
+  }
+
   @Get('/get-by-country/:countryCode')
   @MessagePattern({ cmd: 'GET_BY_COUNTRY_ORGANIZATIONS' })
   async getByCountry(@Param() { countryCode }: any) {
