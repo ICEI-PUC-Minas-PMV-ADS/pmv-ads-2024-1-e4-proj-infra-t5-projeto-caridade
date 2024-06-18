@@ -51,8 +51,6 @@ export class AppService {
 
   
   async authenticate(data: IAuthenticateUserDto): Promise<String> {
-    
-
     if(!data) throw new Error("Invalid fields")
 
     const findUser = await this.findByEmail(data.email)

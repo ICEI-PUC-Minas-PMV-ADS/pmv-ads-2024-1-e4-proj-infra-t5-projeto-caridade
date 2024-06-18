@@ -17,6 +17,10 @@ function Modal(props: IProps) {
     });
   };
 
+  const destroy = async () => {
+    await UserServices.destroy()
+  }
+
   return (
     <Box
       sx={{
@@ -59,7 +63,7 @@ function Modal(props: IProps) {
       </Button>
       <Button
         variant="outlined"
-        onClick={handleSubmit}
+        onClick={destroy}
         sx={{ color: "red" }} 
       >
         Deletar Conta

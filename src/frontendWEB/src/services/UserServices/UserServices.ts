@@ -5,8 +5,16 @@ export class UserServices {
 
   static async login(data: IUserLogin) {
     const response = await api.post('/user/signin', data)
-    console.log(response);
     localStorage.setItem('token', response.data)
+  }
+
+  static async destroy() {
+    const token = localStorage.getItem('token')
+    await api.delete(`/user`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
   }
 
   static async create(data: ICreateUser) {
@@ -15,11 +23,16 @@ export class UserServices {
   }
 
   static async update(data: IUpdateUser) {
-    const response = await api.put('/user', data)
+    const token = localStorage.getItem('token')
+    const response = await api.put('/user', data, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     return response.data
   }
 
-  static async authUser(token: string | null) {
+  static async authUser(token: string | null) {    
     const response = await api.get('/user/auth', {
       headers: {
         Authorization: `Bearer ${token}`
@@ -31,5 +44,9 @@ export class UserServices {
   static async getById(id: number) {
     const response = await api.get<IUser>(`/users/${id}`)
     return response.data
+  }
+
+  static async logout() {
+    localStorage.removeItem("token")
   }
 }
