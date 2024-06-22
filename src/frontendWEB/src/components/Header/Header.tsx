@@ -1,16 +1,21 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../context/userContext";
+import { UserServices } from "../../services/UserServices/UserServices";
 
 interface IProps {
   openEditProfile(): void
 } 
 
 function Header(props: IProps) {
-  const { isUserLogged, loggedUser } = useUserContext()
+  const { isUserLogged, loggedUser, user } = useUserContext()
+
+  const logout = async () => {
+    UserServices.logout()
+  }
 
   useEffect(() => {
     loggedUser()
@@ -30,14 +35,26 @@ function Header(props: IProps) {
       </Link>
       <Box display="flex" flexDirection="row" alignItems="center" gap={4}>
         {isUserLogged ? 
-          <Button
-            sx={{ borderRadius: 30 }}
-            variant="contained"
-            style={{ padding: "10px", display: "flex", gap: 5 }}
-            onClick={() => props.openEditProfile()}
-          >
-            <FaUserAlt /> name
-          </Button>
+        <div>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <Button
+              sx={{ borderRadius: 30 }}
+              variant="contained"
+              style={{ padding: "10px", display: "flex", gap: 5 }}
+              onClick={() => props.openEditProfile()}
+            >
+              <FaUserAlt /> {user?.name}
+            </Button>
+            <Button
+              sx={{ borderRadius: 30 }}
+              variant="contained"
+              style={{ padding: "10px", display: "flex", gap: 5 }}
+              onClick={() => logout()}
+            >
+              logout
+            </Button>
+          </div>
+        </div>
           :
           <Link to="/login">
             <Button variant="contained">Login</Button>
