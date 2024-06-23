@@ -39,7 +39,7 @@ export default function TabLayout() {
                   <Entypo
                     name="login"
                     size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
+                    color={'#006E8C'}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                   />
                 )}
