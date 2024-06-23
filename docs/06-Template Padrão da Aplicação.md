@@ -10,6 +10,8 @@ Layout padrão da aplicação que será utilizado em todas as páginas com a def
 
 ### MOBILE
 
+![Tela Principal](img/principalmobile.jpg)
+
 ## Página de Login
 
 ### WEB
@@ -18,6 +20,8 @@ Layout padrão da aplicação que será utilizado em todas as páginas com a def
 
 ### MOBILE
 
+![Tela Login](img/loginmobile.jpg)
+
 ## Página de Cadastro
 
 ### WEB
@@ -25,3 +29,15 @@ Layout padrão da aplicação que será utilizado em todas as páginas com a def
 ![Página de Cadastro](img/paginacadastro.jpg)
 
 ### MOBILE
+
+![Tela Cadastro](img/cadastromobile.jpg)
+
+## Página de Busca
+
+### WEB
+
+![Página de Busca](img/paginabusca.jpg)
+
+### MOBILE
+
+![Tela Busca](img/buscamobile.jpg)
