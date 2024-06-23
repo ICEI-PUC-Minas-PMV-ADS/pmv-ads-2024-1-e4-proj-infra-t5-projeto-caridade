@@ -6,8 +6,7 @@ export class AppController {
   constructor(
     @Inject('USER_SERVICE') private readonly userClient: ClientProxy,
     @Inject('REVIEW_SERVICE') private readonly reviewClient: ClientProxy,
-    @Inject('ORGANIZATION_SERVICE')
-    private readonly organizationService: ClientProxy,
+    @Inject('ORGANIZATION_SERVICE') private readonly organizationService: ClientProxy,
   ) {}
 
   @Get('/user')

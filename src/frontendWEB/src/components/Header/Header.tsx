@@ -15,6 +15,7 @@ function Header(props: IProps) {
 
   const logout = async () => {
     UserServices.logout()
+    loggedUser()
   }
 
   useEffect(() => {

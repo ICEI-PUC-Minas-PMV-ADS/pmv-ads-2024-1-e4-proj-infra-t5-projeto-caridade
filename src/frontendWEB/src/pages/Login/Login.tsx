@@ -3,12 +3,14 @@ import charityImage2 from "../../assets/charity2.jpg";
 import { useState } from "react";
 import { UserServices } from "../../services/UserServices/UserServices";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../context/userContext";
 
 function Login() {
   const [ email, setEmail ] = useState<string>('')
   const [ password, setPassword ] = useState<string>('')
   const [ req, setReq ] = useState(false)
   const navigate = useNavigate()
+  const { loggedUser } = useUserContext()
 
   const signIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -18,6 +20,7 @@ function Login() {
         email,
         password,
       })
+      loggedUser()
       setReq(false)
       navigate('/')
     } catch (error: any) {
