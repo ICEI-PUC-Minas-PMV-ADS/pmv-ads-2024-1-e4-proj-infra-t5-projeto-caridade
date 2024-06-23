@@ -8,7 +8,17 @@ export default function ModalScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Charity Finder</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.subTitle}>Login</Text>
+      <Text style={styles.subTitle}>Cadastro</Text>
+      <Text style={styles.text}>Nome</Text>
+      <TextInput
+      style = {styles.input}
+      placeholder='Nome'
+      />
+      <Text style={styles.text}>Sobrenome</Text>
+      <TextInput
+      style = {styles.input}
+      placeholder='nome@dominio.com.br'
+      />
       <Text style={styles.text}>E-mail</Text>
       <TextInput
       style = {styles.input}
@@ -19,9 +29,15 @@ export default function ModalScreen() {
       style = {styles.input}
       placeholder='*******'
       secureTextEntry={true}
+      />
+      <Text style={styles.text}>Confirmar Senha</Text>
+      <TextInput
+      style = {styles.input}
+      placeholder='*******'
+      secureTextEntry={true}
       /> 
       <Link href="/" asChild>
-      <Button title='Entrar' color={'#006E8C'} ></Button>
+      <Button title='Cadastrar' color={'#006E8C'} ></Button>
       </Link>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
