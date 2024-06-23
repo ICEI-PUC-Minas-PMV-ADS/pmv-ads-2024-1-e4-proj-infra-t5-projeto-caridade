@@ -1,4 +1,4 @@
-import { api } from "../api";
+import { organization } from "../api";
 
 export class OrganizationServices {
   static async getByParams({
@@ -11,7 +11,7 @@ export class OrganizationServices {
     name: string;
   }) {
     try {
-      const response = await api.get(
+      const response = await organization.get(
         `/get-by-params?name=${name}&theme=${theme}&country=${country}`
       );
       return response;

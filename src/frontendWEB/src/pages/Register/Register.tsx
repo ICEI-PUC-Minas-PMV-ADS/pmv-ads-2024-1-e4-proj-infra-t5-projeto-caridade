@@ -1,7 +1,7 @@
 import { Box, Button, Card, CircularProgress, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import charityImage2 from "../../assets/charity2.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserServices } from "../../services/UserServices/UserServices";
 
 function Register() {
@@ -12,6 +12,7 @@ function Register() {
   const [ lastName, setLastName ] = useState("")
   const [ password, setPassword ] = useState("")
   const [ confirmPassword, setConfirmPassword ] = useState("")
+  const navigate = useNavigate()
 
   const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -30,6 +31,7 @@ function Register() {
         password
       })
       setReq(false)
+      navigate('/')
       setError('')
     } catch (error: any) {
       setError(error.response.data.message) 
@@ -94,12 +96,14 @@ function Register() {
             <TextField 
               id="outlined-basic" 
               label="Senha" 
-              variant="outlined" 
+              variant="outlined"
+              type="password"
               onChange={e => setPassword(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Confirmar Senha"
+              type="password"
               variant="outlined"
               onChange={e => setConfirmPassword(e.target.value)}
             />
