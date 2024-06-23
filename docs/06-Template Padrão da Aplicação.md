@@ -1,12 +1,43 @@
 # Template Padrão da Aplicação
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>
-
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
-> **Links Úteis**:
->
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+## Página Principal
+
+### WEB
+
+![Página Principal](img/paginaprincipal.jpg)
+
+### MOBILE
+
+![Tela Principal](img/principalmobile.jpg)
+
+## Página de Login
+
+### WEB
+
+![Página de Login](img/paginalogin.jpg)
+
+### MOBILE
+
+![Tela Login](img/loginmobile.jpg)
+
+## Página de Cadastro
+
+### WEB
+
+![Página de Cadastro](img/paginacadastro.jpg)
+
+### MOBILE
+
+![Tela Cadastro](img/cadastromobile.jpg)
+
+## Página de Busca
+
+### WEB
+
+![Página de Busca](img/paginabusca.jpg)
+
+### MOBILE
+
+![Tela Busca](img/buscamobile.jpg)
