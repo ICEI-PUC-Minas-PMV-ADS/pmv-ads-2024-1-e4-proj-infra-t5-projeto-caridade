@@ -2,8 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, TextInput, Button } from 'react-native';
 import { Link, Tabs } from 'expo-router';
 import { Text, View } from '@/components/Themed';
+import { UserServices } from "../../frontendWEB/src/services/UserServices/UserServices";
+import { useState } from 'react';
 
 export default function ModalScreen() {
+  const [ name, setName ] = useState("")
+  const [ email, setEmail ] = useState("")
+  const [ lastName, setLastName ] = useState("")
+  const [ password, setPassword ] = useState("")
+
+  const createUser = async () => {
+      await UserServices.create({
+        name,
+        last_name: lastName,
+        email,
+        password
+      })
+  }
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Charity Finder</Text>
@@ -13,22 +29,26 @@ export default function ModalScreen() {
       <TextInput
       style = {styles.input}
       placeholder='Nome'
+      onChangeText={(text) => setName(text)}
       />
       <Text style={styles.text}>Sobrenome</Text>
       <TextInput
       style = {styles.input}
       placeholder='nome@dominio.com.br'
+      onChangeText={(text) => setLastName(text)}
       />
       <Text style={styles.text}>E-mail</Text>
       <TextInput
       style = {styles.input}
       placeholder='nome@dominio.com.br'
+      onChangeText={(text) => setEmail(text)}
       />
       <Text style={styles.text}>Senha</Text>
       <TextInput
       style = {styles.input}
       placeholder='*******'
       secureTextEntry={true}
+      onChangeText={(text) => setPassword(text)}
       />
       <Text style={styles.text}>Confirmar Senha</Text>
       <TextInput
@@ -37,7 +57,7 @@ export default function ModalScreen() {
       secureTextEntry={true}
       /> 
       <Link href="/" asChild>
-      <Button title='Cadastrar' color={'#006E8C'} ></Button>
+      <Button onPress={() => createUser()} title='Cadastrar' color={'#006E8C'} ></Button>
       </Link>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
