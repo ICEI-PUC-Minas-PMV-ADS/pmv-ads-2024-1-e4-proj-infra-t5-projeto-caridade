@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../services/api";
+import { api, organization } from "../services/api";
 
 export function useFetch({ url, params }: { url: string; params?: any }) {
   const [data, setData] = useState(null);
@@ -8,8 +8,9 @@ export function useFetch({ url, params }: { url: string; params?: any }) {
   useEffect(() => {
     const fetchData = async () => {
       setIsPending(true);
-      const response = await api.get(url, params);
+      const response = await organization.get(url, params);
       setIsPending(false);
+      console.log("teste", response);
       setData(response?.data);
     };
     fetchData();

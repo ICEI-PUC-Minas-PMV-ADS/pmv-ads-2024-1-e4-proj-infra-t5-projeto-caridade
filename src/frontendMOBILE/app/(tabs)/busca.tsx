@@ -75,6 +75,11 @@ export default function App() {
   );
 
   return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Busca Entidade</Text>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      {/* <EditScreenInfo path="app/(tabs)/two.tsx" /> */}
+    </View>
     <PaperProvider theme={theme}>
       <View style={styles.container}>
         <Appbar.Header style={styles.header}>
@@ -109,7 +114,9 @@ export default function App() {
               return null;
             }}
           />
+
           <Button mode="contained" onPress={() => console.log("Buscando...")}>
+
             Buscar
           </Button>
         </View>

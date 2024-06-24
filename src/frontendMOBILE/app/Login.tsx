@@ -2,8 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, TextInput, Button } from 'react-native';
 import { Link, Tabs } from 'expo-router';
 import { Text, View } from '@/components/Themed';
+import { UserServices } from "../../frontendWEB/src/services/UserServices/UserServices";
+import { useState } from 'react';
+import { useUserContext } from "../../frontendWEB/src/context/userContext";
 
 export default function ModalScreen() {
+  const [ email, setEmail ] = useState<string>('')
+  const [ password, setPassword ] = useState<string>('')
+  const { loggedUser } = useUserContext()
+
+  const signIn = async () => {
+    try {
+      await UserServices.login({
+        email,
+        password,
+      })
+      loggedUser()
+    } catch (error: any) {
+    }
+  } 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Charity Finder</Text>
@@ -11,19 +28,20 @@ export default function ModalScreen() {
       <Text style={styles.subTitle}>Login</Text>
       <Text style={styles.text}>E-mail</Text>
       <TextInput
-      style = {styles.input}
-      placeholder='nome@dominio.com.br'
+        style={styles.input}
+        onChangeText={(text) => setEmail(text)}
+        placeholder="nome@dominio.com.br"
       />
       <Text style={styles.text}>Senha</Text>
       <TextInput
       style = {styles.input}
       placeholder='*******'
+      onChangeText={(text) => setPassword(text)}
       secureTextEntry={true}
       /> 
       <Link href="/" asChild>
-      <Button title='Entrar' color={'#006E8C'} ></Button>
+      <Button onPress={() => signIn()} title='Entrar' color={'#006E8C'} ></Button>
       </Link>
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
