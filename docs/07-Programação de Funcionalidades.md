@@ -1,15 +1,18 @@
 # Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
-
 Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+| ID     | Descrição do Requisito                                                                                                   |                                                           Artefato                                                            |
+| ------ | ------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------: |
+| RF-001 | O usuário pode se cadastrar e editar informações                                                                         |                 user-service ; app.controller.ts ; app.entitie-user.ts; app.service.ts; Register.tsx                 |
+| RF-002 | O usuário pode fazer login no sistema                                                                                    |                      user-service ; app.controller.ts ; app.entitie-user.ts; app.service.ts; Login.tsx.                       |
+| RF-003 | O usuário pode pesquisar por organizações                                                                                | organization-service; api_service.ts; app.controller.ts; converter.js; main.ts; organizations-cache.ts; Search.tsx; busca.tsx |
+| RF-004 | O usuário pode filtrar projetos sociais de acordo com critérios estabelecidos (país e tema)                              | organization-service; api_service.ts; app.controller.ts; converter.js; main.ts; organizations-cache.ts; Search.tsx; busca.tsx |
+| RF-005 | O usuário pode favoritar organizações/projetos sociais                                                                   |                                                      em desenvolvimento                                                       |
+| RF-006 | Usuário terá acesso às organizações favoritadas em sua página inicial de perfil                                          |                                                      em desenvolvimento                                                       |
+| RF-007 | O usuário pode clicar em cards com “imagem da organização” favoritada para acessar informações e a página da organização |                                                       Organization.tsx;                                                       |
+| RF-008 | Usuário pode acrescentar “comentários” na página da instituição favoritada                                               |                                                      em desenvolvimento                                                       |
+| RF-009 | Usuário verá uma “barra de progresso” indicando o valor doado para cada instituição favoritada por ele                   |                                                      em desenvolvimento                                                       |
+| RF-010 | Usuário pode registrar a quantidade doada para determinada instituição                                                   |                                                      em desenvolvimento                                                       |
+| RF-007 | Usuário pode ocultar projetos que não deseja ver                                                                         |                                                      em desenvolvimento                                                       |
+| RF-007 | Usuário pode enviar mensagens para outros usuários                                                                       |                                                      em desenvolvimento                                                       |
